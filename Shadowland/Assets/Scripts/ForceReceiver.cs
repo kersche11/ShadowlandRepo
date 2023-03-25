@@ -24,6 +24,6 @@ public class ForceReceiver : MonoBehaviour
             verticalVelocity += Physics.gravity.y*Time.deltaTime;
         }
 
-        Debug.Log(verticalVelocity.ToString());
+        //Debug.Log(verticalVelocity.ToString());
     }
 }

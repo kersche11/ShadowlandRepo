@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 //In dieser Klasse werden alle Actions des Players implementiert.
 public class InputReader : MonoBehaviour, Controls.IPlayingActions
 {
-
+    public bool IsAttacking {  get; private set; }
     public Vector2 MovementValue {  get; private set; }
     //Events
     public event Action JumpEvent;
@@ -72,5 +72,17 @@ public class InputReader : MonoBehaviour, Controls.IPlayingActions
     {
         if (!context.performed) { return; }
         CancelEvent?.Invoke();
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed) 
+        { 
+            IsAttacking = true;
+        }
+        else if (context.canceled)
+        {
+            IsAttacking = false;
+        }
     }
 }

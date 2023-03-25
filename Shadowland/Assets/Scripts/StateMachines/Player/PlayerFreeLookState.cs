@@ -27,6 +27,16 @@ public class PlayerFreeLookState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
+        //Wenn der Player den Attack Button (Left-Click, Button West) drückt
+        //geht er vom FreeLook in den AttackState
+        //Der zweite Parameter ist die Attacking ID, der Angriff beginnt mit der ersten Attacke in der AttackList
+        //Array[0]
+        if (stateMachine.InputReader.IsAttacking)
+        {
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine,0));
+            return;
+        }
+
         Vector3 movement = CalculateMovement();
 
         //Move wird von der PlayerBaseState.cs aufgerufen
@@ -85,7 +95,7 @@ public class PlayerFreeLookState : PlayerBaseState
             stateMachine.transform.rotation,
             Quaternion.LookRotation(movement),deltaTime*stateMachine.RotationSmoothValue);
 
-        Debug.Log(stateMachine.InputReader.MovementValue);
+       // Debug.Log(stateMachine.InputReader.MovementValue);
     }
 
 

@@ -22,7 +22,9 @@ public class PlayerStateMachine : StateMachine
     //[field: SerializeField] public float WalkingMovementSpeed { get; private set; }
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
-    
+
+    [field: SerializeField] public Attack[] Attacks { get; private set; }
+
 
     [field: SerializeField] public float RotationSmoothValue { get; private set; }
     [field: SerializeField] public float JumpForce { get; private set; }

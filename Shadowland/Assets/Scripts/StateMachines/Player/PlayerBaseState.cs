@@ -14,10 +14,18 @@ public abstract class PlayerBaseState : State
         this.stateMachine = stateMachine;   
     }
 
+    //Move für FreeLookState und TargetState
     protected void Move(Vector3 motion, float deltaTime)
     {
        
         stateMachine.CharacterController.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);
+    }
+
+    //Move für AttackState (ohne motion)
+    protected void Move(float deltaTime)
+    {
+
+        Move(Vector3.zero,deltaTime);
     }
 
     //Im PlayerTargetState wollen wir immer Richtung Target schauen

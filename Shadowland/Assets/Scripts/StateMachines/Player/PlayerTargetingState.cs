@@ -21,6 +21,17 @@ public class PlayerTargetingSate : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
+        //Wenn der Player den Attack Button (Left-Click, Button West) drückt
+        //geht er vom Tageting in den AttackState
+        //Der zweite Parameter ist die Attacking ID, der Angriff beginnt mit der ersten Attacke in der AttackList
+        //Array[0]
+        if (stateMachine.InputReader.IsAttacking)
+        {
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine,0));
+            return;
+        }
+
+
         //Wenn der Player das Targert verliert (out of Range, oder Death) geht man 
         //Automatisch in den FreeLookState
         if (stateMachine.Targeter.CurrentTarget==null)
