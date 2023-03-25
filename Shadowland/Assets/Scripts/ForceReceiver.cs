@@ -7,9 +7,18 @@ public class ForceReceiver : MonoBehaviour
     //Referenz zum Player
     [SerializeField] private CharacterController characterController;
 
-    private float verticalVelocity;
+    //Setting fpr Damping: Wie schnell soll der Impact wieder reduziert werden
+    [SerializeField] private float impactDrag = 0.3f;
 
-    public Vector3 Movement => Vector3.up * verticalVelocity;
+    private float verticalVelocity;
+    private Vector3 impact;
+    private Vector3 dampingVelocity;
+
+    
+
+
+    //Das Movement basiert auf auf der Gravitation und Externen Einflüssen zb: Schlag mit dem Schwert.
+    public Vector3 Movement => impact+Vector3.up * verticalVelocity;
 
     //Kalkuliere Velocity jeden Frame 
     private void Update()
@@ -24,6 +33,17 @@ public class ForceReceiver : MonoBehaviour
             verticalVelocity += Physics.gravity.y*Time.deltaTime;
         }
 
-        //Debug.Log(verticalVelocity.ToString());
+
+        //https://docs.unity3d.com/ScriptReference/Vector3.SmoothDamp.html
+        //Hier wird der Impact wieder smooth auf 0 reduziert (pro frame)
+
+        impact = Vector3.SmoothDamp(impact,Vector3.zero,ref dampingVelocity,impactDrag);
+    }
+
+
+    //Add impact zu movement
+    public void AddForce(Vector3 force)
+    {
+        impact += force;
     }
 }

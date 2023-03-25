@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerAttackingState : PlayerBaseState
 {
     private float previousFrameTime;
+    private bool alreadyAppliedForce;
     private Attack attack;
     public PlayerAttackingState(PlayerStateMachine stateMachine, int attackIndex) : base(stateMachine)
     {
@@ -27,16 +28,35 @@ public class PlayerAttackingState : PlayerBaseState
 
         float normalizedTime = GetNormallizedTime();
 
-        if (normalizedTime > previousFrameTime && normalizedTime < 1f)
+        if (normalizedTime >= previousFrameTime && normalizedTime < 1f)
         {
+
+            //Forcetime kann einen Wert von 0-1 haben (0-100%)
+            //Wir legen fest wie lange währen der Attacke, der Impact erhöht werden soll(Player Inspector).
+            if (normalizedTime >= attack.ForceTime)
+            {
+                TryApplyForce();
+            }
+
+
             if(stateMachine.InputReader.IsAttacking)
             {
                 TryComboAttack(normalizedTime);
             }
         }
+
+        //Nach der Attacke: Return zu einen Anderen Status
         else
         {
-            //Go Back
+            //Wenn noch Targets in der nähe sind gehe in den TargetState
+            if (stateMachine.Targeter.CurrentTarget!=null)
+            {
+                stateMachine.SwitchState(new PlayerTargetingSate(stateMachine));
+            }
+            else
+            {
+                stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+            }
         }
         previousFrameTime = normalizedTime;
 
@@ -73,6 +93,15 @@ public class PlayerAttackingState : PlayerBaseState
 
     }
 
+    private void TryApplyForce()
+    {
+        if (alreadyAppliedForce) { return; }
+      
+        stateMachine.ForceReceiver.AddForce(stateMachine.transform.forward * attack.Force);
+
+        alreadyAppliedForce = true;
+    }
+
     private float GetNormallizedTime()
     {
        AnimatorStateInfo currentInfo = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
@@ -96,5 +125,7 @@ public class PlayerAttackingState : PlayerBaseState
             return 0f;
         }
     }
+
+  
   
 }
