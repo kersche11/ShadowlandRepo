@@ -10,13 +10,14 @@ public class PlayerTargetingSate : PlayerBaseState
     private readonly int TargetingRightTreeHash = Animator.StringToHash("TargetingRight");
     public PlayerTargetingSate(PlayerStateMachine stateMachine) : base(stateMachine){}
 
+    private const float CrossFadeDuration =0.1f;
     public override void Enter()
     {
         //Subscribe das Cancel Event
         stateMachine.InputReader.CancelEvent += OnCancel;
 
         //Starte Target Animation
-        stateMachine.Animator.Play(TargetingBlendTreeHash);
+        stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, CrossFadeDuration);
     }
 
     public override void Tick(float deltaTime)

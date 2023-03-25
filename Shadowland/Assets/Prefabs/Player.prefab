@@ -1645,7 +1645,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6505686436158031780}
+  - component: {fileID: 3117555576343348066}
   - component: {fileID: 4529764827248058955}
+  - component: {fileID: 4258816259758893769}
   m_Layer: 0
   m_Name: WeaponHitbox
   m_TagString: Untagged
@@ -1668,6 +1670,19 @@ Transform:
   m_Father: {fileID: 3094880083991385512}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3117555576343348066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4503621452253635696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b93cb626e0a4cb4caaf1cd4f86547ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myCollider: {fileID: 0}
 --- !u!136 &4529764827248058955
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1682,6 +1697,22 @@ CapsuleCollider:
   m_Height: 1.25
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &4258816259758893769
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4503621452253635696}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4577904701858256689
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,6 +1726,7 @@ GameObject:
   - component: {fileID: 4453266730128224053}
   - component: {fileID: 3495462710812518718}
   - component: {fileID: 241505783339523503}
+  - component: {fileID: 66791537585525101}
   - component: {fileID: 3210975126950798821}
   - component: {fileID: 7954319298690040387}
   m_Layer: 0
@@ -1743,6 +1775,7 @@ MonoBehaviour:
   <Animator>k__BackingField: {fileID: 3210975126950798821}
   <Targeter>k__BackingField: {fileID: 5943946721361862959}
   <ForceReceiver>k__BackingField: {fileID: 4453266730128224053}
+  <Weapon>k__BackingField: {fileID: 3117555576343348066}
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 5
   <Attacks>k__BackingField:
@@ -1752,18 +1785,21 @@ MonoBehaviour:
     <ComboAttackTime>k__BackingField: 0.6
     <Force>k__BackingField: 14
     <ForceTime>k__BackingField: 0.35
+    <Damage>k__BackingField: 10
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
     <ComboAttackTime>k__BackingField: 0.5
     <Force>k__BackingField: 14
     <ForceTime>k__BackingField: 0.35
+    <Damage>k__BackingField: 13
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
     <ComboAttackTime>k__BackingField: 0
     <Force>k__BackingField: 20
     <ForceTime>k__BackingField: 0.35
+    <Damage>k__BackingField: 18
   <RotationSmoothValue>k__BackingField: 10
   <JumpForce>k__BackingField: 0
 --- !u!114 &4453266730128224053
@@ -1805,6 +1841,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca04fa5cfc35403419921eb73f9d195f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &66791537585525101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4577904701858256689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa2b2fa1623a8844a5d89dd582c36b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!95 &3210975126950798821
 Animator:
   serializedVersion: 5

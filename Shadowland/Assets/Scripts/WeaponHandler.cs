@@ -7,6 +7,7 @@ public class WeaponHandler : MonoBehaviour
     [SerializeField] private GameObject weaponHitbox;
   
 
+    //Wird vom Animator Attack Event an einem bestimmten Keyframe getriggert
     public void EnableWeaponHitbox()
     {
         weaponHitbox.SetActive(true);
