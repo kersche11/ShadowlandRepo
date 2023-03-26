@@ -20,7 +20,7 @@ public class SceneList : MonoBehaviour
         Intro
     }
 
-    [SerializeField] Collider PlayerCollider;
+    public Collider PlayerCollider {get;private set;}
     [field:SerializeField] public SceneNames selectedScene{get;private set;}
 
     //private Dictionary<string, int> sceneData = new Dictionary<string, int>
@@ -36,14 +36,20 @@ public class SceneList : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-            if (other != PlayerCollider) { return; }
-        Debug.Log("ChangeScene!");
+        if (PlayerCollider == null) { Debug.Log("Null"); return; }
+        if (other != PlayerCollider) {Debug.Log("NotPlayer"); return; }
+        
+            Debug.Log("Load Scene");
             LoadScene();
     }
 
     private void Start()
     {
-        Debug.Log("Scene " + (int)selectedScene);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        
+        PlayerCollider = player.GetComponent<Collider>();
+        Debug.Log(player.gameObject.name);
+        Debug.Log(PlayerCollider);
     }
 
     public void LoadScene()

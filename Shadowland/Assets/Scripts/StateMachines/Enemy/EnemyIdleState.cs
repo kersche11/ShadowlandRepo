@@ -20,6 +20,16 @@ public class EnemyIdleState : EnemyBaseState
 
     public override void Tick(float deltaTime)
     {
+        Move(deltaTime);
+
+        if(IsInChaseRange())
+        {
+            stateMachine.SwitchState(new EnemyChasingState(stateMachine));
+            return;
+        }
+
+
+
         //Setze Speed des Enemies smooth auf 0 (Idle)
         stateMachine.Animator.SetFloat(speedHash, 0f, AnimatorDampTime,deltaTime);
     }
