@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/OpenWorld.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/DungeonOne_MysteryTree.unity
+    guid: 5bad3a3245e86c74297820e2abc18c8b
+  - enabled: 1
+    path: Assets/Scenes/DungeonTwo_Labyrinth.unity
+    guid: af978ec20101a9f42bf38711209f07e3
+  - enabled: 1
+    path: Assets/Scenes/DungeonThree_Sprint.unity
+    guid: 408415b4c34566b48a04bc138513478f
+  - enabled: 1
+    path: Assets/Scenes/DungeonFour_Endboss.unity
+    guid: 88b165ec65cad244b90648b9a530a376
   m_configObjects: {}

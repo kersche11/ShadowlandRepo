@@ -15,6 +15,7 @@ public class PlayerTargetingSate : PlayerBaseState
     {
         //Subscribe das Cancel Event
         stateMachine.InputReader.CancelEvent += OnCancel;
+        stateMachine.InputReader.JumpEvent += OnJump;
 
         //Starte Target Animation
         stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, CrossFadeDuration);
@@ -57,6 +58,7 @@ public class PlayerTargetingSate : PlayerBaseState
     public override void Exit()
     {
         stateMachine.InputReader.CancelEvent -= OnCancel;
+        stateMachine.InputReader.JumpEvent -= OnJump;
     }
 
     //Nach dem drücken der Escapetaste wechseln wir wieder vom TargetModus in den PlayerFreeLookState
@@ -67,8 +69,14 @@ public class PlayerTargetingSate : PlayerBaseState
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
     }
 
-    //Im TargetModus wollen wir im (rechts) oder gegen(links) den Uhrzeigersinn um den Gegner laufen
 
+    private void OnJump()
+    {
+        stateMachine.SwitchState(new PlayerJumpingState(stateMachine));
+    }
+
+
+    //Im TargetModus wollen wir im (rechts) oder gegen(links) den Uhrzeigersinn um den Gegner laufen
     private Vector3 CalculateMovement()
     {
         Vector3 movement = new Vector3();
