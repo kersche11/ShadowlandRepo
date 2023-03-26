@@ -1392,6 +1392,7 @@ Transform:
   - {fileID: 8708927798745148722}
   - {fileID: 1644423082050257494}
   - {fileID: 2117903063689605540}
+  - {fileID: 1312787010989469297}
   m_Father: {fileID: 5462024400365703410}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1745,8 +1746,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1312787010989469297}
+  m_Children: []
   m_Father: {fileID: 8058318335287050929}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2021,14 +2021,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7117217558199086537}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.991, y: 1.159, z: 0.256}
+  m_LocalRotation: {x: -0.69636995, y: -0.3789968, z: 0.5036547, w: -0.34316507}
+  m_LocalPosition: {x: -0.49, y: 0.41, z: -0.078}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2106187339741727808}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Father: {fileID: 8208919057867201170}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 59.284, y: 239.774, z: 159.106}
 --- !u!114 &986556640712836677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2089,7 +2089,6 @@ GameObject:
   - component: {fileID: 6830139766943259990}
   - component: {fileID: 4888904952441032813}
   - component: {fileID: 897035385932024821}
-  - component: {fileID: 9163391810684402551}
   m_Layer: 0
   m_Name: EnemyGirl
   m_TagString: Untagged
@@ -2236,19 +2235,6 @@ NavMeshAgent:
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!114 &897035385932024821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7250572716204169227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23a4e43ca95bd0a4fa098948f137ed24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weaponHitbox: {fileID: 7117217558199086537}
---- !u!114 &9163391810684402551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

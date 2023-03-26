@@ -27,7 +27,7 @@ public class PlayerAttackingState : PlayerBaseState
 
         FaceTarget();
 
-        float normalizedTime = GetNormallizedTime();
+        float normalizedTime = GetNormallizedTime(stateMachine.Animator);
 
         if (normalizedTime >= previousFrameTime && normalizedTime < 1f)
         {
@@ -82,14 +82,7 @@ public class PlayerAttackingState : PlayerBaseState
             return; 
         }
 
-        stateMachine.SwitchState
-         (
-            new PlayerAttackingState
-            (
-                stateMachine,attack.ComboStateIndex
-            )
-
-         );
+        stateMachine.SwitchState(new PlayerAttackingState(stateMachine,attack.ComboStateIndex));
 
     }
 
@@ -102,29 +95,7 @@ public class PlayerAttackingState : PlayerBaseState
         alreadyAppliedForce = true;
     }
 
-    private float GetNormallizedTime()
-    {
-       AnimatorStateInfo currentInfo = stateMachine.Animator.GetCurrentAnimatorStateInfo(0);
-       AnimatorStateInfo nextInfo = stateMachine.Animator.GetNextAnimatorStateInfo(0);
-
-        //Wenn eine Animation ausgeführt wird, die den Tag "Attack hat, schauen wir wie weit 
-        //fortgeschritten diese Animation ist (Zeitlich)
-        if (stateMachine.Animator.IsInTransition(0) && nextInfo.IsTag("Attack"))
-        {
-            return nextInfo.normalizedTime;
-        }
-
-        //Wenn keine Animation ausgeführt wird, die den Tag "Attack hat, schauen wir wie weit 
-        //fortgeschritten die Animation ist (Zeitlich)
-        else if (!stateMachine.Animator.IsInTransition(0) && currentInfo.IsTag("Attack"))
-        {
-            return currentInfo.normalizedTime;
-        }
-        else
-        {
-            return 0f;
-        }
-    }
+ 
 
   
   
