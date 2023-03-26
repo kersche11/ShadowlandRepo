@@ -24,12 +24,19 @@ public class EnemyChasingState : EnemyBaseState
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
         }
-
+        else if (IsInAttackRange())
+        {
+            Debug.Log("Attack");
+            stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
+        }
         MoveToPlayer(deltaTime);
+        FacePlayer();
 
         //Setze Speed des Enemies smooth auf 0 (Idle)
         stateMachine.Animator.SetFloat(speedHash, 1f, AnimatorDampTime, deltaTime);
     }
+
+  
 
     public override void Exit()
     {
@@ -44,5 +51,12 @@ public class EnemyChasingState : EnemyBaseState
 
         //Synchronisiert NavMeshAgent mit CharacterController
         stateMachine.navMeshAgent.velocity = stateMachine.EnemyController.velocity;
+    }
+
+    private bool IsInAttackRange()
+    {
+        float playerDistanceSqr=(stateMachine.Player.transform.position-stateMachine.transform.position).sqrMagnitude;
+
+        return playerDistanceSqr <= stateMachine.AttackRange*stateMachine.AttackRange;
     }
 }

@@ -28,7 +28,7 @@ public class EnemyIdleState : EnemyBaseState
             return;
         }
 
-
+        FacePlayer();
 
         //Setze Speed des Enemies smooth auf 0 (Idle)
         stateMachine.Animator.SetFloat(speedHash, 0f, AnimatorDampTime,deltaTime);

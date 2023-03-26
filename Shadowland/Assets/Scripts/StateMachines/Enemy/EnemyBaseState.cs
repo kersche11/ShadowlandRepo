@@ -28,6 +28,17 @@ public abstract class EnemyBaseState : State
     }
 
 
+    //Wenn der Gegner den Player verfolgt dreht er sich richtung Player
+    protected void FacePlayer()
+    {
+        if (stateMachine.Player == null) { return; }
+
+        Vector3 lookPositon = stateMachine.Player.transform.position - stateMachine.transform.position;
+
+        lookPositon.y = 0f;
+
+        stateMachine.transform.rotation = Quaternion.LookRotation(lookPositon);
+    }
 
 
 
