@@ -1786,6 +1786,7 @@ MonoBehaviour:
     <Force>k__BackingField: 14
     <ForceTime>k__BackingField: 0.35
     <Damage>k__BackingField: 10
+    <Knockback>k__BackingField: 15
   - <AnimationName>k__BackingField: Attack2
     <TransitionDuration>k__BackingField: 0.1
     <ComboStateIndex>k__BackingField: 2
@@ -1793,6 +1794,7 @@ MonoBehaviour:
     <Force>k__BackingField: 14
     <ForceTime>k__BackingField: 0.35
     <Damage>k__BackingField: 13
+    <Knockback>k__BackingField: 17
   - <AnimationName>k__BackingField: Attack3
     <TransitionDuration>k__BackingField: 0.2
     <ComboStateIndex>k__BackingField: -1
@@ -1800,6 +1802,7 @@ MonoBehaviour:
     <Force>k__BackingField: 20
     <ForceTime>k__BackingField: 0.35
     <Damage>k__BackingField: 18
+    <Knockback>k__BackingField: 25
   <RotationSmoothValue>k__BackingField: 10
   <JumpForce>k__BackingField: 0
 --- !u!114 &4453266730128224053
@@ -1815,6 +1818,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 7954319298690040387}
+  navMeshAgent: {fileID: 0}
   impactDrag: 0.1
 --- !u!114 &3495462710812518718
 MonoBehaviour:

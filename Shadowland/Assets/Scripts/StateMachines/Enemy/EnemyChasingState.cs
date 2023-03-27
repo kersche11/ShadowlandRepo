@@ -23,6 +23,7 @@ public class EnemyChasingState : EnemyBaseState
         if (!IsInChaseRange())
         {
             stateMachine.SwitchState(new EnemyIdleState(stateMachine));
+            return;
         }
         else if (IsInAttackRange())
         {

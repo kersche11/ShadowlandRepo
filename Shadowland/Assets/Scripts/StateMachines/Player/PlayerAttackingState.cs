@@ -15,7 +15,7 @@ public class PlayerAttackingState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.Weapon.SetAttack(attack.Damage);
+        stateMachine.Weapon.SetAttack(attack.Damage, attack.Knockback);
         //Crossfade ist für die Transition von einer Animation zur nächsten
         //https://docs.unity3d.com/ScriptReference/Animator.CrossFadeInFixedTime.html
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName,attack.TransitionDuration);

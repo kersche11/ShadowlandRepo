@@ -2041,7 +2041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b93cb626e0a4cb4caaf1cd4f86547ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myCollider: {fileID: 0}
+  myCollider: {fileID: 2729342250667121369}
 --- !u!136 &2976849972908634151
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2198,6 +2198,7 @@ MonoBehaviour:
   <PlayerChasingRange>k__BackingField: 10
   <AttackRange>k__BackingField: 1.5
   <AttackDamage>k__BackingField: 20
+  <AttackKnockback>k__BackingField: 20
 --- !u!114 &6830139766943259990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2211,6 +2212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 2729342250667121369}
+  navMeshAgent: {fileID: 4888904952441032813}
   impactDrag: 0.3
 --- !u!195 &4888904952441032813
 NavMeshAgent:
