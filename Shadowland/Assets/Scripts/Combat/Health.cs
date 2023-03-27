@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public int currentHealth {get; private set;}
 
     public event Action OnTakeDamage;
+    public event Action OnDie;
 
     void Start()
     {
@@ -25,6 +26,10 @@ public class Health : MonoBehaviour
 
         //TakeDamageEvent um in den ImpactState zu wechseln
         OnTakeDamage?.Invoke();
-   
+        
+        if (currentHealth ==0)
+        {
+            OnDie?.Invoke();
+        }
     }
 }

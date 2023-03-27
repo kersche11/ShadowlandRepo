@@ -2195,6 +2195,7 @@ MonoBehaviour:
   <navMeshAgent>k__BackingField: {fileID: 4888904952441032813}
   <Weapon>k__BackingField: {fileID: 986556640712836677}
   <Health>k__BackingField: {fileID: 5922284889455530902}
+  <Target>k__BackingField: {fileID: 4213631677039631796}
   <MovementSpeed>k__BackingField: 3
   <PlayerChasingRange>k__BackingField: 10
   <AttackRange>k__BackingField: 1.5
