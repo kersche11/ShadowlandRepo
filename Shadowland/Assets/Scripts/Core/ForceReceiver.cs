@@ -44,7 +44,7 @@ public class ForceReceiver : MonoBehaviour
 
         if (navMeshAgent!=null)
         {
-            if (impact == Vector3.zero)
+            if (impact.sqrMagnitude < 0.2f*0.2f)
             {
                 navMeshAgent.enabled = true;
             }

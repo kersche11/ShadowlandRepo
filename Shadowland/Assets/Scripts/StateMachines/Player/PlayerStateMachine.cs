@@ -18,14 +18,16 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Targeter Targeter { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
-
     [field: SerializeField] public WeaponDamage Weapon { get; private set; }
+    [field: SerializeField] public Health Health { get; private set; }
+    [field: SerializeField] public Attack[] Attacks { get; private set; }
+   
 
     //[field: SerializeField] public float WalkingMovementSpeed { get; private set; }
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
 
-    [field: SerializeField] public Attack[] Attacks { get; private set; }
+   
 
 
     [field: SerializeField] public float RotationSmoothValue { get; private set; }
@@ -46,5 +48,18 @@ public class PlayerStateMachine : StateMachine
         SwitchState(new PlayerFreeLookState(this)); 
     }
 
- 
+    //Wenn dieses Script aktiv ist subscribe das event OnTakeDamage im Health.cs script
+    private void OnEnable()
+    {
+        Health.OnTakeDamage += HandleTakeDamage;
+    }
+
+    private void OnDisable()
+    {
+        Health.OnTakeDamage -= HandleTakeDamage;
+    }
+    private void HandleTakeDamage()
+    {
+        SwitchState(new PlayerImpactState(this));
+    }
 }

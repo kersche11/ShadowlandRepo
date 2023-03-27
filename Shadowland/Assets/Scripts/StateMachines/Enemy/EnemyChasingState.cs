@@ -46,9 +46,13 @@ public class EnemyChasingState : EnemyBaseState
     }
     private void MoveToPlayer(float deltaTime)
     {
-        stateMachine.navMeshAgent.destination = stateMachine.Player.transform.position;
+        //Checkt ob das NavMesh mit der Playervelosity übereinstimmt
+        if (stateMachine.navMeshAgent.isOnNavMesh)
+        {
+            stateMachine.navMeshAgent.destination = stateMachine.Player.transform.position;
 
-        Move(stateMachine.navMeshAgent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
+            Move(stateMachine.navMeshAgent.desiredVelocity.normalized * stateMachine.MovementSpeed, deltaTime);
+        }
 
         //Synchronisiert NavMeshAgent mit CharacterController
         stateMachine.navMeshAgent.velocity = stateMachine.EnemyController.velocity;

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,9 @@ public class Health : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 100;
     public int currentHealth {get; private set;}
+
+    public event Action OnTakeDamage;
+
     void Start()
     {
         currentHealth = maxHealth; 
@@ -18,6 +22,9 @@ public class Health : MonoBehaviour
         currentHealth -= damage;
         
         if (currentHealth < 0) { currentHealth = 0; }
-       // Debug.Log(currentHealth.ToString());
+
+        //TakeDamageEvent um in den ImpactState zu wechseln
+        OnTakeDamage?.Invoke();
+   
     }
 }
