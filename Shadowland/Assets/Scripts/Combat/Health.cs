@@ -32,4 +32,9 @@ public class Health : MonoBehaviour
             OnDie?.Invoke();
         }
     }
+
+    public void ResetHealth(int health)
+    {
+        currentHealth = health;
+    }
 }

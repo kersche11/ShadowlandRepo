@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class MysteryTree: MonoBehaviour
+public class MysteryTree : MonoBehaviour
 {
-    [SerializeField] private Health health;
+    [field: SerializeField] public Health health {get; private set;}
     [SerializeField] private MysteryTree mysteryTree;
     [field:SerializeField] public TreeManager treeManager{get; private set;}
 
@@ -17,13 +17,19 @@ public class MysteryTree: MonoBehaviour
            
             if(health.currentHealth<=0)
             {                               
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
+                this.gameObject.SetActive(false);
+                treeManager.CheckTreeOrder(mysteryTree);
+               
             }
+           
         }
-    }
-    private void OnDestroy()
-    {
-        treeManager.CheckTreeOrder(mysteryTree);
-    }
 
+       
+    }
+    //private void OnDestroy()
+    //{
+       
+    //}
+   
 }
