@@ -6125,7 +6125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1464569612502282036, guid: 9f6c8f2a822e1fd47820566dee7f350c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.007848435
+      value: 0.0078484425
       objectReference: {fileID: 0}
     - target: {fileID: 1464569612502282036, guid: 9f6c8f2a822e1fd47820566dee7f350c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -7690,7 +7690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ea5ffc54d7574741a40b76d470d4be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: {fileID: 4883878035171769929}
+  <health>k__BackingField: {fileID: 0}
   mysteryTree: {fileID: 5229616466227354428}
   <treeManager>k__BackingField: {fileID: 1688225577}
 --- !u!1001 &6518949170741845476
@@ -18810,6 +18810,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 699279969}
     m_Modifications:
+    - target: {fileID: 2344611323265448395, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 103.93469
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344611323265448395, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.022026062
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344611323265448395, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.498642
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344611323265448395, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.33966714
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344611323265448395, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.31227407
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344611323265448395, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.65312845
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344611323265448395, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.60044515
+      objectReference: {fileID: 0}
     - target: {fileID: 3619359762517746173, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
       propertyPath: <treeManager>k__BackingField
       value: 
@@ -18826,6 +18854,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1e9ce6298ef75bd4a9fedeead0100b5a, type: 2}
+    - target: {fileID: 7672562325957778094, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 99.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7672562325957778094, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -9.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 7672562325957778094, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.23
+      objectReference: {fileID: 0}
     - target: {fileID: 8642505770326406033, guid: c73ee8db9548d0a47b1aee5573ad10db, type: 3}
       propertyPath: m_Name
       value: GameManagerDungeon1_TreeMystery
