@@ -11,7 +11,7 @@ public class PlayerDeadState : PlayerBaseState
     public override void Enter()
     {
         //Ragdoll
-        Debug.Log("Death");
+        stateMachine.Ragdoll.ToggleRagdoll(true);
         stateMachine.Weapon.gameObject.SetActive(false);    
 
         //Respawn

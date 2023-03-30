@@ -91,8 +91,7 @@ public class TreeManager : MonoBehaviour
             Vector3 _randomPosition = new Vector3(_xAxis,_yAxis,_zAxis);
 
             Instantiate(Enemy, _randomPosition, Quaternion.identity);
-           Enemy.TryGetComponent<NavMeshAgent>(out NavMeshAgent _agent);
-            _agent = true;
+           
         }
 
         DeaktivateTreeCollition();
