@@ -45,6 +45,8 @@ public class PlayerStateMachine : StateMachine
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         TargetingSphere.radius = TargetingRadius;
         MainCameraTransform = Camera.main.transform;
 

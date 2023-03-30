@@ -13,7 +13,13 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private const float AnimatorDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
-    public PlayerFreeLookState(PlayerStateMachine stateMachine) : base(stateMachine){}
+
+    private bool shouldFade;
+
+    public PlayerFreeLookState(PlayerStateMachine stateMachine, bool shouldFade = true) : base(stateMachine)
+    {
+        this.shouldFade = shouldFade;
+    }
 
     public override void Enter()
     {
@@ -23,8 +29,20 @@ public class PlayerFreeLookState : PlayerBaseState
         //Subscribe das Target Event. Wenn die Taste Space gedrückt wird switchen wir in den PlayerJumpState
         stateMachine.InputReader.JumpEvent += OnJump;
 
-        //Starte FreeLook Animation
-        stateMachine.Animator.CrossFadeInFixedTime(FreeLookTreeBlendHash,CrossFadeDuration);
+
+        stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0);
+
+        //Starte FreeLook Animation, abhängig von shouldFade
+        if (shouldFade ) 
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(FreeLookTreeBlendHash, CrossFadeDuration);
+
+        }
+        else
+        {
+            stateMachine.Animator.Play(FreeLookTreeBlendHash);
+        }
+        
     }
     public override void Tick(float deltaTime)
     {
@@ -92,7 +110,7 @@ public class PlayerFreeLookState : PlayerBaseState
     //LERP Linere Inerpolation, um die Drehung smoother zu machen
     private void FaceMovementDirection(Vector3 movement, float deltaTime)
     {
-        stateMachine.transform.rotation = Quaternion.Lerp(
+            stateMachine.transform.rotation = Quaternion.Lerp(
             stateMachine.transform.rotation,
             Quaternion.LookRotation(movement),deltaTime*stateMachine.RotationSmoothValue);
 

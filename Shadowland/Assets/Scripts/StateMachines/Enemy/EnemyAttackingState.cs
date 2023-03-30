@@ -25,7 +25,7 @@ public class EnemyAttackingState : EnemyBaseState
         //Nach der AttackAnimation gehen wir in den ChasingState
         //Sollte der Player noch in der AttackingRange sein geht der Gegner sofort wieder in den Attackstate
         //und führt die nächste Attack aus.
-        if(GetNormallizedTime(stateMachine.Animator)>=1)
+        if(GetNormallizedTime(stateMachine.Animator,"Attack")>=1)
         {
             stateMachine.SwitchState(new EnemyChasingState(stateMachine));
         }

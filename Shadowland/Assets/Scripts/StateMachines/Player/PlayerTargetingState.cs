@@ -15,7 +15,7 @@ public class PlayerTargetingSate : PlayerBaseState
     public override void Enter()
     {
         //Subscribe das Cancel Event
-        stateMachine.InputReader.CancelEvent += OnCancel;
+        stateMachine.InputReader.TargetEvent += OnTarget;
         stateMachine.InputReader.JumpEvent += OnJump;
         stateMachine.InputReader.DodgeEvent += OnDodge;
 
@@ -64,14 +64,14 @@ public class PlayerTargetingSate : PlayerBaseState
     }
     public override void Exit()
     {
-        stateMachine.InputReader.CancelEvent -= OnCancel;
+        stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.InputReader.JumpEvent -= OnJump;
         stateMachine.InputReader.DodgeEvent -= OnDodge;
     }
 
     //Nach dem drücken der Escapetaste wechseln wir wieder vom TargetModus in den PlayerFreeLookState
     //Zerst wir das CurrentTarget auf "Null" gesetzt, dann erst gewechselt
-    private void OnCancel()
+    private void OnTarget()
     {
         stateMachine.Targeter.Cancel();
         stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));

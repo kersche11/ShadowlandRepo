@@ -19,11 +19,11 @@ public class PlayerJumpingState : PlayerBaseState
         //Player springt die eingetellte Jumpforce (VerticalVelocity) nach oben
         stateMachine.ForceReceiver.JumpForce(stateMachine.JumpForce);
 
-        momentum = stateMachine.CharacterController.velocity;
-        momentum.y = 0f;
+        //momentum = stateMachine.CharacterController.velocity;
+        //momentum.y = 0f;
 
-        stateMachine.Animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);  
-       
+        stateMachine.Animator.CrossFadeInFixedTime(JumpHash, CrossFadeDuration);
+        stateMachine.LedgeDetector.OnLedgeDetect += HandleLedgeDetection;
     }
     public override void Tick(float deltaTime)
     {
@@ -47,8 +47,15 @@ public class PlayerJumpingState : PlayerBaseState
 
     public override void Exit()
     {
-       
+        stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetection;
     }
+
+    private void HandleLedgeDetection(Vector3 ledgeForward, Vector3 closestPoint)
+    {
+        stateMachine.SwitchState(new PlayerHangingState(stateMachine, ledgeForward,closestPoint));
+    }
+
+
 
     private Vector3 CalculateMovement()
     {
