@@ -37,7 +37,7 @@ public class WeaponDamage : MonoBehaviour
         if (other.TryGetComponent<Health>(out Health health)) 
         {
             health.DealDamage(damage);
-            Debug.Log("Damage: " + damage);
+          
         }
 
         //Wenn das getroffene Target einen ForceReseiver hat wird das Targert bei einem Hit zurückgeschleudert

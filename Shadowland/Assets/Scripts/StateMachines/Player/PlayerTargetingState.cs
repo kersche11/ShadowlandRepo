@@ -32,6 +32,10 @@ public class PlayerTargetingSate : PlayerBaseState
             stateMachine.SwitchState(new PlayerAttackingState(stateMachine,0));
             return;
         }
+        if (stateMachine.InputReader.IsBlocking)
+        {
+            stateMachine.SwitchState(new PlayerBlockingState(stateMachine));
+        }
 
 
         //Wenn der Player das Targert verliert (out of Range, oder Death) geht man 

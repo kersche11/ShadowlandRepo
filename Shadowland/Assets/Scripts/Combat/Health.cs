@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 100;
-    public int currentHealth {get; private set;}
+    [SerializeField] private float maxHealth = 100;
+    public float currentHealth {get; private set;}
+    private bool isBlocking;
 
     public event Action OnTakeDamage;
     public event Action OnDie;
@@ -16,9 +17,20 @@ public class Health : MonoBehaviour
         currentHealth = maxHealth; 
     }
 
-    public void DealDamage(int damage)
+    public void SetBlockingState(bool isBlocking)
+    {
+        this.isBlocking = isBlocking;
+    }
+
+    public void DealDamage(float damage)
     {
         if (currentHealth == 0) { return; }
+
+        //Wenn der Player Blockt bekommt er 80% weniger schaden.
+        if (isBlocking) 
+        {
+            damage *= 0.2f;
+        }
         
         currentHealth -= damage;
         
@@ -31,6 +43,7 @@ public class Health : MonoBehaviour
         {
             OnDie?.Invoke();
         }
+        Debug.Log("Dealed Damage: " + damage);
     }
 
     public void ResetHealth(int health)

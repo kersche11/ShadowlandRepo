@@ -7,8 +7,8 @@ using UnityEngine.Scripting.APIUpdating;
 public class PlayerJumpingState : PlayerBaseState
 {
     private readonly int JumpHash = Animator.StringToHash("Jump");
-    
 
+    private int jumpRange=3;
     private Vector3 momentum;
 
     private const float CrossFadeDuration = 0.1f;
@@ -27,7 +27,11 @@ public class PlayerJumpingState : PlayerBaseState
     }
     public override void Tick(float deltaTime)
     {
-        Move(momentum, deltaTime);
+        Vector3 movement = CalculateMovement();
+
+        
+        Move(movement*jumpRange, deltaTime);
+        //Move(deltaTime);
 
         //Überprüfe ob die Y-Geschwindigkeit 0 oder weniger ist.
         //Das bedeutet wir Fallen und wechseln in den FallingState
@@ -46,6 +50,27 @@ public class PlayerJumpingState : PlayerBaseState
        
     }
 
-  
- 
+    private Vector3 CalculateMovement()
+    {
+        Vector3 forward = stateMachine.MainCameraTransform.forward;
+        Vector3 right = stateMachine.MainCameraTransform.right;
+
+        forward.y = 0;
+        right.y = 0;
+
+        forward.Normalize();
+        right.Normalize();
+
+      Vector3  momentum = forward * stateMachine.InputReader.MovementValue.y
+                + right * stateMachine.InputReader.MovementValue.x;
+
+
+       //momentum += stateMachine.CharacterController.velocity;
+       //momentum.y = 0f;
+
+
+        return momentum;
+    }
+
+
 }
