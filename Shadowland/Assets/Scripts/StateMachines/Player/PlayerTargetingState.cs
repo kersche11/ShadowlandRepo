@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerTargetingSate : PlayerBaseState
 {
+    private Vector2 dodgingDirectionInput;
+    private float remainingDodgeTime;
+
     //Speichert die Target Animation als Hash in den integer
     private readonly int TargetingBlendTreeHash = Animator.StringToHash("TargetingBlendTree");
     private readonly int TargetingForwardTreeHash = Animator.StringToHash("TargetingForward");
@@ -16,6 +19,7 @@ public class PlayerTargetingSate : PlayerBaseState
         //Subscribe das Cancel Event
         stateMachine.InputReader.CancelEvent += OnCancel;
         stateMachine.InputReader.JumpEvent += OnJump;
+        stateMachine.InputReader.DodgeEvent += OnDodge;
 
         //Starte Target Animation
         stateMachine.Animator.CrossFadeInFixedTime(TargetingBlendTreeHash, CrossFadeDuration);
@@ -48,7 +52,7 @@ public class PlayerTargetingSate : PlayerBaseState
         }
         //Kalkuliert die Bewegungen im TargetState
 
-        Vector3 movement = CalculateMovement();
+        Vector3 movement = CalculateMovement(deltaTime);
         Move(movement*stateMachine.TargetingMovementSpeed, deltaTime);
 
 
@@ -64,6 +68,7 @@ public class PlayerTargetingSate : PlayerBaseState
     {
         stateMachine.InputReader.CancelEvent -= OnCancel;
         stateMachine.InputReader.JumpEvent -= OnJump;
+        stateMachine.InputReader.DodgeEvent -= OnDodge;
     }
 
     //Nach dem drücken der Escapetaste wechseln wir wieder vom TargetModus in den PlayerFreeLookState
@@ -82,12 +87,27 @@ public class PlayerTargetingSate : PlayerBaseState
 
 
     //Im TargetModus wollen wir im (rechts) oder gegen(links) den Uhrzeigersinn um den Gegner laufen
-    private Vector3 CalculateMovement()
+    private Vector3 CalculateMovement(float deltaTime)
     {
         Vector3 movement = new Vector3();
 
-        movement += stateMachine.transform.right * stateMachine.InputReader.MovementValue.x;
-        movement += stateMachine.transform.forward * stateMachine.InputReader.MovementValue.y;
+        if (remainingDodgeTime >0f)
+        {
+            movement += stateMachine.transform.right * dodgingDirectionInput.x * stateMachine.DodgeDistance / stateMachine.DodgeDuration;
+            movement += stateMachine.transform.forward * dodgingDirectionInput.y* stateMachine.DodgeDistance / stateMachine.DodgeDuration;
+            
+            remainingDodgeTime -= deltaTime;
+
+            if (remainingDodgeTime < 0f) { remainingDodgeTime = 0f; }
+
+        }
+        else
+        {
+            movement += stateMachine.transform.right * stateMachine.InputReader.MovementValue.x;
+            movement += stateMachine.transform.forward * stateMachine.InputReader.MovementValue.y;
+
+        }
+
 
         return movement;
     }
@@ -113,5 +133,17 @@ public class PlayerTargetingSate : PlayerBaseState
             float value = stateMachine.InputReader.MovementValue.y > 0 ? 1f : -1f;
             stateMachine.Animator.SetFloat(TargetingForwardTreeHash, value, 0.1f, deltaTime);
         }   
+    }
+    
+    
+    
+    //Wenn der Player doding (STRG) verwendet hat diese Fähigkeit 1 sekunde cooldown zeit
+    private void OnDodge()
+    {
+        if (Time.time - stateMachine.PreviousDodgeTime < stateMachine.DodgeCoolDown){return;}
+
+        stateMachine.SetDodgeTime(Time.time);
+        dodgingDirectionInput = stateMachine.InputReader.MovementValue;
+        remainingDodgeTime = stateMachine.DodgeDuration;
     }
 }

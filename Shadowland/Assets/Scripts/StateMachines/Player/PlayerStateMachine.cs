@@ -22,29 +22,29 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public Health Health { get; private set; }
     [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
     [field: SerializeField] public Attack[] Attacks { get; private set; }
-    
 
+    [field: SerializeField] public SphereCollider TargetingSphere { get; private set; }
 
     //[field: SerializeField] public float WalkingMovementSpeed { get; private set; }
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
-
-   
-
-
+    [field: SerializeField] public float TargetingRadius { get; private set; }
+    [field: SerializeField] public float DodgeDuration { get; private set; }
+    [field: SerializeField] public float DodgeDistance { get; private set; }
+    [field: SerializeField] public float DodgeCoolDown { get; private set; }
     [field: SerializeField] public float RotationSmoothValue { get; private set; }
     [field: SerializeField] public float JumpForce { get; private set; }
     [field: SerializeField] public float JumpRange { get; private set; }
 
 
-
+    public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;  
 
     //Um den Player in Abhängigkeit der Kamera zu steuern (relative to Camera) brauchen wir die Transform der MainCamera
     public Transform MainCameraTransform { get; private set; }
 
     private void Start()
     {
-
+        TargetingSphere.radius = TargetingRadius;
         MainCameraTransform = Camera.main.transform;
 
         //"This" referenziert auf die Instanz in der wir uns gerade befinden.
@@ -71,5 +71,10 @@ public class PlayerStateMachine : StateMachine
     private void HandleDie()
     {
         SwitchState(new PlayerDeadState(this));
+    }
+
+    public void SetDodgeTime(float dodgeTime)
+    {
+        PreviousDodgeTime = dodgeTime;
     }
 }

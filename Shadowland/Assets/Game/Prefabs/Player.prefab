@@ -2001,7 +2001,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6505686436158031780
 Transform:
   m_ObjectHideFlags: 0
@@ -2151,8 +2151,13 @@ MonoBehaviour:
     <ForceTime>k__BackingField: 0.35
     <Damage>k__BackingField: 18
     <Knockback>k__BackingField: 15
+  <TargetingSphere>k__BackingField: {fileID: 3029113895848673513}
   <FreeLookMovementSpeed>k__BackingField: 6
   <TargetingMovementSpeed>k__BackingField: 5
+  <TargetingRadius>k__BackingField: 11
+  <DodgeDuration>k__BackingField: 0.1
+  <DodgeDistance>k__BackingField: 0.75
+  <DodgeCoolDown>k__BackingField: 1
   <RotationSmoothValue>k__BackingField: 10
   <JumpForce>k__BackingField: 2
   <JumpRange>k__BackingField: 4

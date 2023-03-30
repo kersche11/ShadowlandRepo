@@ -1674,6 +1674,14 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0.7885403
       objectReference: {fileID: 0}
+    - target: {fileID: 6697364814523184624, guid: 298a0f33c18571a40824ed5ef163a752, type: 3}
+      propertyPath: <JumpForce>k__BackingField
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6697364814523184624, guid: 298a0f33c18571a40824ed5ef163a752, type: 3}
+      propertyPath: <TargetingRadius>k__BackingField
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6918425181554144613, guid: 298a0f33c18571a40824ed5ef163a752, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 31.737156

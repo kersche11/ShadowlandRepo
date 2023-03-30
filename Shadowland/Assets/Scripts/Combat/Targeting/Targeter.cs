@@ -16,9 +16,11 @@ public class Targeter : MonoBehaviour
     private List<Target> targets=new List<Target>();
     public Target CurrentTarget { get; private set; }
 
+   
 
     private void Start()
     {
+       
         mainCamera = Camera.main;
     }
 
