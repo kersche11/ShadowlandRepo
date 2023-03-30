@@ -8,7 +8,7 @@ public class PlayerJumpingState : PlayerBaseState
 {
     private readonly int JumpHash = Animator.StringToHash("Jump");
 
-    private int jumpRange=3;
+    
     private Vector3 momentum;
 
     private const float CrossFadeDuration = 0.1f;
@@ -30,7 +30,7 @@ public class PlayerJumpingState : PlayerBaseState
         Vector3 movement = CalculateMovement();
 
         
-        Move(movement*jumpRange, deltaTime);
+        Move(movement*stateMachine.JumpRange, deltaTime);
         //Move(deltaTime);
 
         //Überprüfe ob die Y-Geschwindigkeit 0 oder weniger ist.

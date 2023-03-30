@@ -68,10 +68,16 @@ public class Targeter : MonoBehaviour
             Vector2 viewPosition = mainCamera.WorldToViewportPoint(target.transform.position);
 
             //Check ob das Target ausserhalb des Bildschirmes ist
-            if (viewPosition.y < 0 || viewPosition.y>1 || viewPosition.x<0 || viewPosition.x>1)
+            if (viewPosition.y < 0 || viewPosition.y > 1 || viewPosition.x < 0 || viewPosition.x > 1)
             {
                 continue;
             }
+
+            //Better Version not workng :D
+            //if (target.GetComponentInChildren<Renderer>().isVisible)
+            //{
+            //    continue;
+            //}
 
             //Errechne die Distanz von der Bildschírmmitte zum Target
             Vector2 distanceToCenter = viewPosition - new Vector2(0.5f, 0.5f);

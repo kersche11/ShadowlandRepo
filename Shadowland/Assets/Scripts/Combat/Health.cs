@@ -9,6 +9,9 @@ public class Health : MonoBehaviour
     public float currentHealth {get; private set;}
     private bool isBlocking;
 
+    //Return true wenn Player oder Target tot ist
+    public bool IsDead => currentHealth == 0;
+
     public event Action OnTakeDamage;
     public event Action OnDie;
 

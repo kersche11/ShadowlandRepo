@@ -70,8 +70,8 @@ MonoBehaviour:
     m_ActivateAfter: 0
     m_MinDuration: 0
   m_DefaultBlend:
-    m_Style: 1
-    m_Time: 0.5
+    m_Style: 2
+    m_Time: 0.25
     m_CustomCurve:
       serializedVersion: 2
       m_Curve: []
@@ -90,8 +90,6 @@ MonoBehaviour:
     m_ParentHash: 756556552
   - m_Hash: 1914514016
     m_ParentHash: 756556552
-  - m_Hash: -642908913
-    m_ParentHash: 756556552
   - m_Hash: -479991077
     m_ParentHash: 756556552
   - m_Hash: 168036699
@@ -107,6 +105,10 @@ MonoBehaviour:
   - m_Hash: -1947038436
     m_ParentHash: 756556552
   - m_Hash: -51004022
+    m_ParentHash: 756556552
+  - m_Hash: -1063883918
+    m_ParentHash: 756556552
+  - m_Hash: -946407516
     m_ParentHash: 756556552
 --- !u!1 &464389052335679087
 GameObject:
@@ -170,8 +172,8 @@ MonoBehaviour:
   m_LookaheadTime: 0
   m_LookaheadSmoothing: 0
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 0.5
-  m_VerticalDamping: 0.5
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0.1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
@@ -207,9 +209,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_BindingMode: 1
   m_FollowOffset: {x: 0, y: 0, z: -10}
-  m_XDamping: 1
-  m_YDamping: 1
-  m_ZDamping: 1
+  m_XDamping: 0
+  m_YDamping: 0
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -242,7 +244,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464569612346591491}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.8354678, y: 5.170651, z: -9.852236}
+  m_LocalPosition: {x: -3.6012926, y: 5.1706505, z: -13.834148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -284,8 +286,8 @@ MonoBehaviour:
     GateFit: 2
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
+    m_BlendHint: 2
+    m_InheritPosition: 1
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
@@ -426,7 +428,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464569612502282058}
-  m_LocalRotation: {x: 0.06109606, y: -0.59162134, z: 0.04503382, w: 0.8026354}
+  m_LocalRotation: {x: 0.07506423, y: 0.1429356, z: -0.010872635, w: 0.9868215}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -504,7 +506,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464569613103723050}
-  m_LocalRotation: {x: 0.09021142, y: -0.589595, z: 0.0664947, w: 0.7998862}
+  m_LocalRotation: {x: 0.11086094, y: 0.14244632, z: -0.016057592, w: 0.9834435}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -582,7 +584,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464569613278527201}
-  m_LocalRotation: {x: 0.075646974, y: -0.59070694, z: 0.05575927, w: 0.8013948}
+  m_LocalRotation: {x: 0.092954256, y: 0.14271484, z: -0.013463909, w: 0.98529726}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1042,7 +1044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7481640932710411464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.00000047683716, y: -5.545495e-16, z: 10}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1125,8 +1127,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8349358268674691682}
-  m_LocalRotation: {x: -2.7727476e-17, y: 0.00000011920929, z: 3.3087225e-24, w: 1}
-  m_LocalPosition: {x: -1.8972082, y: 4.170651, z: -18.08123}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.8972063, y: 4.1706505, z: -18.08123}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1166,8 +1168,8 @@ MonoBehaviour:
     GateFit: 2
     m_SensorSize: {x: 1, y: 1}
   m_Transitions:
-    m_BlendHint: 0
-    m_InheritPosition: 0
+    m_BlendHint: 2
+    m_InheritPosition: 1
     m_OnCameraLive:
       m_PersistentCalls:
         m_Calls: []
@@ -1671,10 +1673,6 @@ PrefabInstance:
     - target: {fileID: 6505686436158031780, guid: 298a0f33c18571a40824ed5ef163a752, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.7885403
-      objectReference: {fileID: 0}
-    - target: {fileID: 6697364814523184624, guid: 298a0f33c18571a40824ed5ef163a752, type: 3}
-      propertyPath: <FreeLookMovementSpeed>k__BackingField
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6918425181554144613, guid: 298a0f33c18571a40824ed5ef163a752, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

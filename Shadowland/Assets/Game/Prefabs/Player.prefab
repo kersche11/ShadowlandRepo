@@ -2155,6 +2155,7 @@ MonoBehaviour:
   <TargetingMovementSpeed>k__BackingField: 5
   <RotationSmoothValue>k__BackingField: 10
   <JumpForce>k__BackingField: 2
+  <JumpRange>k__BackingField: 4
 --- !u!114 &4453266730128224053
 MonoBehaviour:
   m_ObjectHideFlags: 0

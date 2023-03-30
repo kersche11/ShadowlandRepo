@@ -45,7 +45,9 @@ public abstract class EnemyBaseState : State
     //Errechnet ob der Player in Reichweite des Gegener ist
     //Wenn die Distanz kleiner ist gibt geben wir ein True zurück
     protected bool IsInChaseRange()
-    {
+    {   
+        //Check ob player schon tot ist
+        if(stateMachine.Player.IsDead) { return false; }
 
        float distanceToPlayer= (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
 

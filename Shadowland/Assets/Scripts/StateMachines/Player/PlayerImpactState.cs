@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerImpactState : PlayerBaseState
 {
     private readonly int ImpactHash = Animator.StringToHash("Impact");
+    private readonly int BlockImpactHash = Animator.StringToHash("BlockImpact");
     private const float CrossFadeDuration = 0.1f;
     private float duration = 1f;
 
@@ -14,7 +15,15 @@ public class PlayerImpactState : PlayerBaseState
 
     public override void Enter()
     {
-        stateMachine.Animator.CrossFadeInFixedTime(ImpactHash,CrossFadeDuration);
+        if (stateMachine.InputReader.IsBlocking)
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(BlockImpactHash, CrossFadeDuration);
+        }
+        else
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(ImpactHash, CrossFadeDuration);
+        }
+        
     }
 
     public override void Tick(float deltaTime)

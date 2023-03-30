@@ -34,9 +34,10 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public float RotationSmoothValue { get; private set; }
     [field: SerializeField] public float JumpForce { get; private set; }
+    [field: SerializeField] public float JumpRange { get; private set; }
 
 
-   
+
 
     //Um den Player in Abhängigkeit der Kamera zu steuern (relative to Camera) brauchen wir die Transform der MainCamera
     public Transform MainCameraTransform { get; private set; }
