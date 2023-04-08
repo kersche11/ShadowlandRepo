@@ -69,7 +69,7 @@ public class PlayerTargetingSate : PlayerBaseState
         stateMachine.InputReader.DodgeEvent -= OnDodge;
     }
 
-    //Nach dem drücken der Escapetaste wechseln wir wieder vom TargetModus in den PlayerFreeLookState
+    //Nach dem drücken der TAB wechseln wir wieder vom TargetModus in den PlayerFreeLookState
     //Zerst wir das CurrentTarget auf "Null" gesetzt, dann erst gewechselt
     private void OnTarget()
     {

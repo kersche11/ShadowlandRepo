@@ -11,16 +11,19 @@ public class InputReader : MonoBehaviour, Controls.IPlayingActions
 {
     public bool IsAttacking {  get; private set; }
     public bool IsBlocking { get; private set; }
+    public bool IsCarrying { get; private set; }
     public Vector2 MovementValue {  get; private set; }
     //Events
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
+    public event Action PickUpEvent;
     
 
     private Controls controls;
     private void Start()
     {
+        IsCarrying = false;
         //Wir brauchen eine Referenz der Callbacks zu dieser Klasse:
         controls = new Controls();
         controls.Playing.SetCallbacks(this);
@@ -94,5 +97,17 @@ public class InputReader : MonoBehaviour, Controls.IPlayingActions
         {
             IsBlocking = false;
         }
+    }
+
+    public void OnPickUp(InputAction.CallbackContext context)
+    {
+        //performed = Taste ist gedrückt
+        if (!context.performed) { return; }   
+        PickUpEvent?.Invoke();
+    }
+
+    public void SetCarrying()
+    {
+        IsCarrying = !IsCarrying;
     }
 }

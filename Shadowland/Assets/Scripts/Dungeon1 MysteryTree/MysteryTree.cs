@@ -12,18 +12,23 @@ public class MysteryTree : MonoBehaviour
 
     private void Update()
     {
-        if (health != null)
+        if (!treeManager.win)
         {
-           
-            if(health.currentHealth<=0)
-            {                               
-                //Destroy(this.gameObject);
-                this.gameObject.SetActive(false);
-                treeManager.CheckTreeOrder(mysteryTree);
-               
+            if (health != null)
+            {
+
+                if (health.currentHealth <= 0)
+                {
+                    //Destroy(this.gameObject);
+                    this.gameObject.SetActive(false);
+                    treeManager.CheckTreeOrder(mysteryTree);
+
+                }
+
             }
-           
         }
+        else { return; }
+        
 
        
     }

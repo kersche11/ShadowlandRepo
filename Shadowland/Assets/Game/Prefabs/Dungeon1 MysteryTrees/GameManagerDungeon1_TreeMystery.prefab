@@ -452,7 +452,7 @@ MonoBehaviour:
   EnemySpawnPoint: {fileID: 7672562325957778094}
   SpawnRangeMin: {x: 5, y: -10, z: -10}
   SpawnRangeMax: {x: 4, y: 10, z: 10}
-  EnemyList: {fileID: 906321591126173376}
+  spawnedEnemy: {fileID: 2344611323265448395}
   Enemy: {fileID: 7250572716204169227, guid: 7582b59a00d80e04bb54e6956224db84, type: 3}
   Trees: {fileID: 8566492707077968875}
   TreePositions: {fileID: 1491176599202749739}

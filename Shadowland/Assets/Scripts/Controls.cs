@@ -89,6 +89,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PickUp"",
+                    ""type"": ""Button"",
+                    ""id"": ""4eb7f8db-ede6-44fc-a24f-1dcb07516f1f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -344,6 +353,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""Block"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb112dad-f14c-4c09-a7bd-457a279ff67e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Mouse and Keyboard"",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7388a99-d21d-4ef3-9e0e-1fcdecb47a51"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""PickUp"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -415,6 +446,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Playing_Target = m_Playing.FindAction("Target", throwIfNotFound: true);
         m_Playing_Attack = m_Playing.FindAction("Attack", throwIfNotFound: true);
         m_Playing_Block = m_Playing.FindAction("Block", throwIfNotFound: true);
+        m_Playing_PickUp = m_Playing.FindAction("PickUp", throwIfNotFound: true);
         // Menu
         m_Menu = asset.FindActionMap("Menu", throwIfNotFound: true);
         m_Menu_Newaction = m_Menu.FindAction("New action", throwIfNotFound: true);
@@ -486,6 +518,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Playing_Target;
     private readonly InputAction m_Playing_Attack;
     private readonly InputAction m_Playing_Block;
+    private readonly InputAction m_Playing_PickUp;
     public struct PlayingActions
     {
         private @Controls m_Wrapper;
@@ -497,6 +530,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         public InputAction @Target => m_Wrapper.m_Playing_Target;
         public InputAction @Attack => m_Wrapper.m_Playing_Attack;
         public InputAction @Block => m_Wrapper.m_Playing_Block;
+        public InputAction @PickUp => m_Wrapper.m_Playing_PickUp;
         public InputActionMap Get() { return m_Wrapper.m_Playing; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -527,6 +561,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Block.started += instance.OnBlock;
             @Block.performed += instance.OnBlock;
             @Block.canceled += instance.OnBlock;
+            @PickUp.started += instance.OnPickUp;
+            @PickUp.performed += instance.OnPickUp;
+            @PickUp.canceled += instance.OnPickUp;
         }
 
         private void UnregisterCallbacks(IPlayingActions instance)
@@ -552,6 +589,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @Block.started -= instance.OnBlock;
             @Block.performed -= instance.OnBlock;
             @Block.canceled -= instance.OnBlock;
+            @PickUp.started -= instance.OnPickUp;
+            @PickUp.performed -= instance.OnPickUp;
+            @PickUp.canceled -= instance.OnPickUp;
         }
 
         public void RemoveCallbacks(IPlayingActions instance)
@@ -642,6 +682,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         void OnTarget(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
         void OnBlock(InputAction.CallbackContext context);
+        void OnPickUp(InputAction.CallbackContext context);
     }
     public interface IMenuActions
     {

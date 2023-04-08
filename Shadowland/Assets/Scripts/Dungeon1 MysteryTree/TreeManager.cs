@@ -14,26 +14,40 @@ public class TreeManager : MonoBehaviour
     [SerializeField] private Transform EnemySpawnPoint;
     [SerializeField] private Vector3 SpawnRangeMin;
     [SerializeField] private Vector3 SpawnRangeMax;
-    [SerializeField] private GameObject EnemyList;
+    [SerializeField] private Transform spawnedEnemy;
     [SerializeField] private GameObject Enemy;
     [SerializeField] private GameObject Trees;
     [SerializeField] private GameObject TreePositions;
+    [SerializeField] private GameObject SceneChangeOpenWorld;
 
     private float _xAxis;
     private float _yAxis;
     private float _zAxis;
-    private int numberOfCorrectTrees = 0;
-    private int numberOfFails = 0;
-    private bool isFighting = false;
+    private int numberOfCorrectTrees;
+    private int numberOfFails;
+    private bool isFighting;
+    public bool win {get; private set;}
 
 
+    private void Start()
+    {
+        isFighting = false;
+        SceneChangeOpenWorld.SetActive(false);
+        numberOfCorrectTrees = 0;
+        numberOfFails = 0;
+        win = false;
+}
 
     private void Update()
     {
         if (isFighting)
-        { 
-            
-            
+        {
+           
+            if (spawnedEnemy.childCount == 0)
+            {
+                isFighting = false;
+                ResetTreesRandom();
+            }        
         }
     }
     public void CheckTreeOrder(MysteryTree mysteryTree)
@@ -61,7 +75,9 @@ public class TreeManager : MonoBehaviour
                 if (numberOfCorrectTrees==4)
                 {
                     //Change to OpenWorld
+                    win = true;
                     Debug.Log("Treasure is spawning!");
+                    SceneChangeOpenWorld.SetActive(true);
                 }
                 numberOfCorrectTrees++;
             }
@@ -76,6 +92,7 @@ public class TreeManager : MonoBehaviour
 
     private void SpawnEnemies(int failCount)
     {
+        DeaktivateTreeCollition();
         isFighting = true;  
         numberOfFails++;
         Debug.Log("Spawn Enemies now!");
@@ -90,12 +107,10 @@ public class TreeManager : MonoBehaviour
 
             Vector3 _randomPosition = new Vector3(_xAxis,_yAxis,_zAxis);
 
-            Instantiate(Enemy, _randomPosition, Quaternion.identity);
+            GameObject spawn = Instantiate(Enemy, _randomPosition, Quaternion.identity) as GameObject; //Maze! NavMesh!
+            spawn.transform.SetParent(spawnedEnemy);
            
-        }
-
-        DeaktivateTreeCollition();
-        //ResetTreesRandom();
+        }        
     }
 
     private void ResetTreesRandom()

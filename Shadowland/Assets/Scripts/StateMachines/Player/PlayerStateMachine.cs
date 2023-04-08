@@ -17,6 +17,8 @@ public class PlayerStateMachine : StateMachine
 
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public Targeter Targeter { get; private set; }
+    [field: SerializeField] public ItemTargeter ItemTargeter { get; private set; }
+    [field: SerializeField] public StoneCarryHandler StoneCarryHandler { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
     [field: SerializeField] public WeaponDamage Weapon { get; private set; }
     [field: SerializeField] public Health Health { get; private set; }
@@ -24,12 +26,15 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public LedgeDetector LedgeDetector { get; private set; }
     [field: SerializeField] public Attack[] Attacks { get; private set; }
 
+
     [field: SerializeField] public SphereCollider TargetingSphere { get; private set; }
+    [field: SerializeField] public SphereCollider ItemTargetingSphere { get; private set; }
 
     //[field: SerializeField] public float WalkingMovementSpeed { get; private set; }
     [field: SerializeField] public float FreeLookMovementSpeed { get; private set; }
     [field: SerializeField] public float TargetingMovementSpeed { get; private set; }
     [field: SerializeField] public float TargetingRadius { get; private set; }
+    [field: SerializeField] public float ItemTargetingRadius { get; private set; }
     [field: SerializeField] public float DodgeDuration { get; private set; }
     [field: SerializeField] public float DodgeDistance { get; private set; }
     //[field: SerializeField] public float DodgeCoolDown { get; private set; }
@@ -48,6 +53,7 @@ public class PlayerStateMachine : StateMachine
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         TargetingSphere.radius = TargetingRadius;
+        ItemTargetingSphere.radius = ItemTargetingRadius;
         MainCameraTransform = Camera.main.transform;
 
         //"This" referenziert auf die Instanz in der wir uns gerade befinden.
@@ -80,4 +86,9 @@ public class PlayerStateMachine : StateMachine
     //{
     //    PreviousDodgeTime = dodgeTime;
     //}
+
+    public void SetMovementSpeed(float speed)
+    {
+        FreeLookMovementSpeed = speed;
+    }
 }
