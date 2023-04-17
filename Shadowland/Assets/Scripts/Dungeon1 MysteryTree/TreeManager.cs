@@ -19,6 +19,7 @@ public class TreeManager : MonoBehaviour
     [SerializeField] private GameObject Trees;
     [SerializeField] private GameObject TreePositions;
     [SerializeField] private GameObject SceneChangeOpenWorld;
+    [SerializeField] private GameObject Treasure;
 
     private float _xAxis;
     private float _yAxis;
@@ -36,6 +37,7 @@ public class TreeManager : MonoBehaviour
         numberOfCorrectTrees = 0;
         numberOfFails = 0;
         win = false;
+        Treasure.SetActive(true);
 }
 
     private void Update()
@@ -76,7 +78,7 @@ public class TreeManager : MonoBehaviour
                 {
                     //Change to OpenWorld
                     win = true;
-                    Debug.Log("Treasure is spawning!");
+                    Treasure.SetActive(true);
                     SceneChangeOpenWorld.SetActive(true);
                 }
                 numberOfCorrectTrees++;
