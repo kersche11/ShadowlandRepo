@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerImpactState : PlayerBaseState
 {
@@ -15,6 +16,11 @@ public class PlayerImpactState : PlayerBaseState
 
     public override void Enter()
     {
+        if (SceneManager.GetActiveScene().buildIndex==2)
+        {
+            stateMachine.StoneCarryHandler?.SetStone();
+        }
+       
         if (stateMachine.InputReader.IsBlocking)
         {
             stateMachine.Animator.CrossFadeInFixedTime(BlockImpactHash, CrossFadeDuration);

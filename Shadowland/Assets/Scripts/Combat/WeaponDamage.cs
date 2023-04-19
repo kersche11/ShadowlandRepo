@@ -6,6 +6,7 @@ public class WeaponDamage : MonoBehaviour
 {
     //Hier kommt der Player Collider rein um nicht sich selbst schaden zuzufügen
     [SerializeField] private Collider myCollider;
+  
 
     private List<Collider> alreadyCollidedWith = new List<Collider>();
     private int damage;
@@ -37,7 +38,7 @@ public class WeaponDamage : MonoBehaviour
         if (other.TryGetComponent<Health>(out Health health)) 
         {
             health.DealDamage(damage);
-          
+            
         }
 
         //Wenn das getroffene Target einen ForceReseiver hat wird das Targert bei einem Hit zurückgeschleudert

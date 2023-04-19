@@ -5,7 +5,8 @@ public class ButtonHandler : MonoBehaviour
 {
     [SerializeField] Animator animator;
     [SerializeField] Stone stone;
-    [SerializeField] GameObject Element;
+    [SerializeField] GameObject ElementToSetActive;
+    [SerializeField] GameObject SceneLoader;
     
    
     private readonly int BtnDownHash = Animator.StringToHash("BtnDown");
@@ -15,18 +16,18 @@ public class ButtonHandler : MonoBehaviour
 
     private void Start()
     {
-       
-        Element.SetActive(false);
+        SceneLoader.SetActive(false);
+        ElementToSetActive.SetActive(false);
     }
 
 
 
     private void OnTriggerEnter(Collider other)
     {
-      if (other == stone.GetComponent<Collider>())
+    if (other == stone.GetComponent<Collider>())
         {
             animator.Play("BtnDown");
-            Element.SetActive(true);
+            ElementToSetActive.SetActive(true);
         }
                
     }
@@ -36,7 +37,7 @@ public class ButtonHandler : MonoBehaviour
         if (other == stone.GetComponent<Collider>())
         {
             animator.CrossFadeInFixedTime("BtnUp", CrossFadeDuration);
-            Element.SetActive(false);
+            ElementToSetActive.SetActive(false);
         }
     }
 

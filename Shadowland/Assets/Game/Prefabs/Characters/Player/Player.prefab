@@ -1745,6 +1745,81 @@ Transform:
   m_Father: {fileID: 3914331367285684751}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 74.10428, y: -96.84661, z: 178.26332}
+--- !u!1 &3754473413616373732
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2049079861580847396}
+  - component: {fileID: 8149744343228033829}
+  - component: {fileID: 7929972640461897478}
+  - component: {fileID: 7860928304173050564}
+  m_Layer: 11
+  m_Name: 'TrapDetector '
+  m_TagString: TrapDetector
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2049079861580847396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754473413616373732}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.134, z: -0.008}
+  m_LocalScale: {x: 0.3039546, y: 0.10741889, z: 0.1282595}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3804464983189376395}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8149744343228033829
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754473413616373732}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7929972640461897478
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754473413616373732}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &7860928304173050564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3754473413616373732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6792c570f9da82458343088f186e673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3961382479270281792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2105,6 +2180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myCollider: {fileID: 7954319298690040387}
+  stoneCarryHandler: {fileID: 0}
 --- !u!54 &3013933639779062262
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2181,6 +2257,7 @@ Transform:
   - {fileID: 2963948249381486654}
   - {fileID: 3986077290618330181}
   - {fileID: 357042186183122068}
+  - {fileID: 2049079861580847396}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
