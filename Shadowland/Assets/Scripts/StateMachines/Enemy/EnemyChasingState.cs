@@ -29,6 +29,7 @@ public class EnemyChasingState : EnemyBaseState
         {
             Debug.Log("Attack");
             stateMachine.SwitchState(new EnemyAttackingState(stateMachine));
+            return;
         }
         MoveToPlayer(deltaTime);
         FacePlayer();
