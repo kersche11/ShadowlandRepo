@@ -59,6 +59,11 @@ public class PlayerFreeLookState : PlayerBaseState
             stateMachine.SwitchState(new PlayerAttackingState(stateMachine,0));
             return;
         }
+        if (stateMachine.InputReader.IsBlocking)
+        {
+            stateMachine.SwitchState(new PlayerBlockingState(stateMachine));
+            return;
+        }
 
         Vector3 movement = CalculateMovement();
 
@@ -80,6 +85,8 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
 
         FaceMovementDirection(movement,deltaTime);
+
+        
     }
 
    
@@ -89,6 +96,7 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.InputReader.JumpEvent -= OnJump;
         stateMachine.InputReader.PickUpEvent -= OnPickUp;
+      
     }
 
 

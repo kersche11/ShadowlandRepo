@@ -22,15 +22,16 @@ public class PlayerBlockingState : PlayerBaseState
     {
         Move(deltaTime);
         if (!stateMachine.InputReader.IsBlocking) 
-        { 
+        {
+            if (stateMachine.Targeter.CurrentTarget == null)
+            {
+                stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
+                return;
+            }
             stateMachine.SwitchState(new PlayerTargetingSate(stateMachine));
             return;
         }
-        if (stateMachine.Targeter.CurrentTarget == null)
-        {
-            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
-            return;
-        }
+        
     }
     public override void Exit()
     {

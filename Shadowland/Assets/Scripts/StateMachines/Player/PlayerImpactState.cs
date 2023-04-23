@@ -8,7 +8,7 @@ public class PlayerImpactState : PlayerBaseState
     private readonly int ImpactHash = Animator.StringToHash("Impact");
     private readonly int BlockImpactHash = Animator.StringToHash("BlockImpact");
     private const float CrossFadeDuration = 0.1f;
-    private float duration = 1f;
+    private float duration = 0.5f;
 
     public PlayerImpactState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
