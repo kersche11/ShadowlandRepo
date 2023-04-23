@@ -47,7 +47,7 @@ public class PlayerJumpingState : PlayerBaseState
 
     public override void Exit()
     {
-        stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetection;
+             stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetection;
     }
 
     private void HandleLedgeDetection(Vector3 ledgeForward, Vector3 closestPoint)
