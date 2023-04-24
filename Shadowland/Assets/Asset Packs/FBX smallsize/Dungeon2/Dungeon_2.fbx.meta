@@ -1,0 +1,361 @@
+fileFormatVersion: 2
+guid: b91e40d7158d27044b7557b8c90d08d5
+ModelImporter:
+  serializedVersion: 21300
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Case 1_Baked_Baked.001
+    second: {fileID: 2100000, guid: 881ae3e2c3a39d143abb58b4d4426824, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor Layer 1_Baked
+    second: {fileID: 2100000, guid: 91ceebb36bbb44f4ab84e2948dbe3b5c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor Layer 2_Baked
+    second: {fileID: 2100000, guid: fc6c3bfe0ec2de8438251583bb20565f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: 80c3b369495e14148993e1e1d60b93a4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outer Wall_Baked
+    second: {fileID: 2100000, guid: 28ddb2fb9440723409f760a3baf22bcf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Platte_Baked
+    second: {fileID: 2100000, guid: 90bead9d4f5910242ba53a71f06c4b85, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall 2_Baked.002
+    second: {fileID: 2100000, guid: 4189755f4e95b1542a6366aea063b585, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall 3_Baked.002
+    second: {fileID: 2100000, guid: aff006e5d055960419516d5ef20a1c68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall 4_Baked.002
+    second: {fileID: 2100000, guid: b3df90df8c3bc324bad731dc9ee504e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall 5_Baked.001
+    second: {fileID: 2100000, guid: 603a46a88929dc54992cde30376b62c2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall 6_Baked.007
+    second: {fileID: 2100000, guid: c423c691b5f821340a060641d616c740, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall 7_Baked.002
+    second: {fileID: 2100000, guid: b8d2d296b1cf9b34e8a1b87479b26776, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall-torch_Baked.002
+    second: {fileID: 2100000, guid: 92259597ad125084b8a482b948c3c6c5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: torch_fire_Baked.001
+    second: {fileID: 2100000, guid: 4e27b7cfca9226243b2bd70d95d875b7, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Case 1_Baked_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: d44ec8f639defb748899ec92f8c7980f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Case 1_Baked_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 1c8963e409f37e545bc34461fd3dc00d, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Case 1_Baked_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: 64ec5f7f8ca33b24c8be4b07b8a9d81c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor Layer 1_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 286ad0297a4794b4a9857f652fc65efa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor Layer 1_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 673ce4896a5d83c4b959c0907ca15be6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor Layer 1_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: ef13cbbdaf835ec49b02d35600cd37e4, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor Layer 2_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 42ff006af22edbb468b00c2ba34281e6, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor Layer 2_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: f53a6301823b10245a5d1cf562f2c1f7, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Floor Layer 2_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: b5d8014ef88f2874f84d5ff64cf4979c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Outer Wall_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 5063f490d7d406a46b650b4619cdacac, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Outer Wall_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 5b32ef6aeea72e947a183fb42343c57a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Platte_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 81a519ce4efa1844ba981e2ed3ab4993, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Platte_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 14f8d33b579074848a830b8133274678, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Platte_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: 1bb1dfefcc59edd41a8e74b25c2556fa, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 2_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 73902d058385a1b48918cb6b8a834fce, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 2_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 3e8877457e71ee94cb6304622c0c9663, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 2_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: 0607ac10b17487a459791e29bb1c061b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 3_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 584f7f4a914352248b346b79819af50a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 3_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 5b2c34af1165959429b7147da7b3d24a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 3_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: 9eb2db3be49dc0546b3e64a9947a610e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 4_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 741a1b670b8ba3c458417fdc882591d9, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 4_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: d3dbd614406f58649af913d150af53cf, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 4_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: 3509ab9731ba2b041b1ad5ec8ee54db2, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 5_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 8627476df5e578d409cd4ce0a1e62b5c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 5_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 56fb83712e640c44680c37347d30aed8, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 5_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: ab94ac493ecb95f41a64acb0e9fce17c, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 6_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 56aa7f4fb8902d34790d8c7361817f14, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 6_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 5aaa32fc7fc325044a0c84b9d20c4195, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 7_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 91cad954bb33f114893340cd8ad9aa7f, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 7_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 0497ee00e4e66b34fbd73991b369c61b, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall 7_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: 9e77cd0707e810648aac40cdd445332a, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall-torch_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 24f27e20240c808478831e9a7a08473e, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall-torch_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 77d1f5d1b586d07439b5e65bc8f1ea51, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: Wall-torch_Bake1_PBR_Roughness
+    second: {fileID: 2800000, guid: 836b93bb8f99b9144b3e7414e91cd0fc, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: torch_fire_Bake1_PBR_Diffuse
+    second: {fileID: 2800000, guid: 5b8de69844bbe4749859c6d675b658df, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: torch_fire_Bake1_PBR_Emission
+    second: {fileID: 2800000, guid: 255f2df1c2046f048b0c896d849f87cd, type: 3}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: torch_fire_Bake1_PBR_Normal
+    second: {fileID: 2800000, guid: 817acb43b0f01ac4688c284f2d5f4ee7, type: 3}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
