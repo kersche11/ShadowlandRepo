@@ -776,6 +776,7 @@ GameObject:
   - component: {fileID: 9116503610161696411}
   - component: {fileID: 1153924954142244538}
   - component: {fileID: 6287809757366899238}
+  - component: {fileID: 5541161442616687047}
   m_Layer: 0
   m_Name: Polygonal Metalon Green
   m_TagString: Untagged
@@ -980,6 +981,21 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &5541161442616687047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188957724111927571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81915a257d1989a41a5d9d6034faf96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: {fileID: 9088278822408242583}
+  CoolDown: 3
+  coolDownTimer: 0
 --- !u!1 &2188972320190939229
 GameObject:
   m_ObjectHideFlags: 0

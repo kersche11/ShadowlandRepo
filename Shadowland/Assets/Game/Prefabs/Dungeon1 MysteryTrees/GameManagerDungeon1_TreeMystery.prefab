@@ -5862,7 +5862,7 @@ MonoBehaviour:
   SpawnRangeMin: {x: -5, y: 0, z: -5}
   SpawnRangeMax: {x: 5, y: 0, z: 5}
   spawnedEnemy: {fileID: 2631025128201825944}
-  Enemy: {fileID: 7250572716204169227, guid: 1014a654e80ebe54289ed692b8d23fdc, type: 3}
+  Enemy: {fileID: 2188957724111927571, guid: cfdb690fe85d0d446ae6289d5a98fc52, type: 3}
   Trees: {fileID: 705217468664227480}
   TreePositions: {fileID: 1205634080458803832}
   SceneChangeOpenWorld: {fileID: 0}

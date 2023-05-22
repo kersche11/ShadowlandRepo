@@ -2646,7 +2646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterController: {fileID: 6555209363514215768}
-  navMeshAgent: {fileID: 6962684186506603480, guid: 0e2efe32718bb3a449eeed1dfc9337f3, type: 3}
+  navMeshAgent: {fileID: 4204290915223540625}
   impactDrag: 0.3
 --- !u!114 &6555209363514215744
 MonoBehaviour:

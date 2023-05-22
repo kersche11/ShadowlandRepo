@@ -103,6 +103,7 @@ MonoBehaviour:
   animator: {fileID: 2384280493990915111}
   stone: {fileID: 0}
   ElementToSetActive: {fileID: 0}
+  SceneLoader: {fileID: 0}
 --- !u!54 &6830509033702766235
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,7 +144,7 @@ Animator:
   m_GameObject: {fileID: 3493264170186901123}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5aa863493e1a1d5488c0f964b7223f31, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

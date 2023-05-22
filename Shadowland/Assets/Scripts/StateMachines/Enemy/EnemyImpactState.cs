@@ -29,7 +29,7 @@ public class EnemyImpactState : EnemyBaseState
     }
     public override void Exit()
     {
-
+       
     }
 
 

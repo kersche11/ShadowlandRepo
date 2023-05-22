@@ -15,7 +15,9 @@ public class EnemyChasingState : EnemyBaseState
 
     public override void Enter()
     {
+    
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
+
     }
 
     public override void Tick(float deltaTime)

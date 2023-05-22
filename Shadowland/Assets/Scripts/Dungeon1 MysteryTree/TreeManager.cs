@@ -37,7 +37,7 @@ public class TreeManager : MonoBehaviour
         numberOfCorrectTrees = 0;
         numberOfFails = 0;
         win = false;
-        Treasure.SetActive(true);
+        Treasure.SetActive(false);
 }
 
     private void Update()
