@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaypointPath : MonoBehaviour
 {
+    int nextWaypointIndex;
     public Transform GetWaypoint(int waypointIndex)
     {
         return transform.GetChild(waypointIndex);
@@ -11,10 +12,10 @@ public class WaypointPath : MonoBehaviour
 
     public int GetNextWaypointIndex(int currentWaypointIndex)
     {
-        int nextWaypointIndex = currentWaypointIndex+1;
-        if (nextWaypointIndex == transform.childCount)
+        
+        if (nextWaypointIndex < transform.childCount)
         {
-            nextWaypointIndex = 0;
+            nextWaypointIndex = currentWaypointIndex + 1;
         }
         return nextWaypointIndex;
     }

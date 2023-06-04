@@ -6,7 +6,7 @@ using UnityEngine.AI;
 
 public class BossStateMachine : StateMachine
 {
-
+    [field:SerializeField] public WaypointPath WaypointPath { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public CharacterController EnemyController { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
@@ -14,10 +14,9 @@ public class BossStateMachine : StateMachine
     [field: SerializeField] public WeaponDamage Weapon { get; private set; }
     [field: SerializeField] public Health Health { get; private set; }
     [field: SerializeField] public Target Target { get; private set; }
-    [field: SerializeField] public Ragdoll Ragdoll { get; private set; }
     [field: SerializeField] public float MovementSpeed { get; private set; }
     [field: SerializeField] public float PlayerChasingRange { get; private set; }
-
+    [field: SerializeField] public GameObject WaypointCenter { get; private set; }
     [field: SerializeField] public float AttackRange { get; private set; }
     [field: SerializeField] public int AttackDamage { get; private set; }
     [field: SerializeField] public int AttackKnockback { get; private set; }
@@ -32,7 +31,7 @@ public class BossStateMachine : StateMachine
         navMeshAgent.updatePosition = false;
         navMeshAgent.updateRotation = false;
 
-        SwitchState(new BossIdleState(this));
+        SwitchState(new BossPatrollState(this));
     }
 
 

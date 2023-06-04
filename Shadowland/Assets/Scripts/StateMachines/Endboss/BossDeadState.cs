@@ -10,7 +10,7 @@ public class BossDeadState : BossBaseState
 
     public override void Enter()
     {
-        stateMachine.Ragdoll.ToggleRagdoll(true);
+        //stateMachine.Ragdoll.ToggleRagdoll(true);
         stateMachine.Weapon.gameObject.SetActive(false);
         GameObject.Destroy(stateMachine.Target);
         

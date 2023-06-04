@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 //Der InputReader erbt von MonoBehaviour und Controls
 //Das ist nur möglich weil Controls.IPlayingACtions ein INTERFACE ist!
 //In dieser Klasse werden alle Actions des Players implementiert.
-public class InputReader : MonoBehaviour, Controls.IPlayingActions
+public class InputReader : MonoBehaviour, Controls.IPlayingActions, Controls.IMenuActions
 {
     public bool IsAttacking {  get; private set; }
     public bool IsBlocking { get; private set; }
@@ -109,5 +109,14 @@ public class InputReader : MonoBehaviour, Controls.IPlayingActions
     public void SetCarrying()
     {
         IsCarrying = !IsCarrying;
+    }
+
+
+
+
+    public void OnClick(InputAction.CallbackContext context)
+    {
+       
+        
     }
 }
