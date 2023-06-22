@@ -7,6 +7,7 @@ public class WaypointPath : MonoBehaviour
     int nextWaypointIndex;
     public Transform GetWaypoint(int waypointIndex)
     {
+        Debug.Log(waypointIndex);
         return transform.GetChild(waypointIndex);
     }
 
@@ -17,6 +18,8 @@ public class WaypointPath : MonoBehaviour
         {
             nextWaypointIndex = currentWaypointIndex + 1;
         }
+        
         return nextWaypointIndex;
+
     }
 }

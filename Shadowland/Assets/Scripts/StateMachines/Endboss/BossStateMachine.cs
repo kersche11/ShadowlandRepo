@@ -6,7 +6,8 @@ using UnityEngine.AI;
 
 public class BossStateMachine : StateMachine
 {
-    [field:SerializeField] public WaypointPath WaypointPath { get; private set; }
+    [field:SerializeField] public WaypointPath WaypointPathPatroll { get; private set; }
+    [field: SerializeField] public WaypointPath WaypointPathLanding { get; private set; }
     [field: SerializeField] public Animator Animator { get; private set; }
     [field: SerializeField] public CharacterController EnemyController { get; private set; }
     [field: SerializeField] public ForceReceiver ForceReceiver { get; private set; }
@@ -20,6 +21,8 @@ public class BossStateMachine : StateMachine
     [field: SerializeField] public float AttackRange { get; private set; }
     [field: SerializeField] public int AttackDamage { get; private set; }
     [field: SerializeField] public int AttackKnockback { get; private set; }
+    [field: SerializeField] public StartFightTrigger startFightTrigger { get; private set; }
+
 
     public Health Player { get; private set; }
 

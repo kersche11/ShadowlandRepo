@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ragdoll
   - TrapDetector
+  - StartFight
   layers:
   - Default
   - TransparentFX
