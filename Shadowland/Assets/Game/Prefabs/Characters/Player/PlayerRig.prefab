@@ -2082,6 +2082,27 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2050705132792153506, guid: c9eb2cfe06afd3d4b8fc06dd8af5fb15, type: 3}
   m_PrefabInstance: {fileID: 8048756391235246187}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8342773445492137422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2050705132792153509, guid: c9eb2cfe06afd3d4b8fc06dd8af5fb15, type: 3}
+  m_PrefabInstance: {fileID: 8048756391235246187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &9051569699127533762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342773445492137422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2d0a91de4906d459ce8c9919a9621b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackImage: {fileID: 0}
+  jumpImage: {fileID: 0}
+  dodgeImage: {fileID: 0}
+  stoneImage: {fileID: 0}
 --- !u!4 &8342773445992464209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2050705134463903546, guid: c9eb2cfe06afd3d4b8fc06dd8af5fb15, type: 3}

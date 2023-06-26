@@ -34,7 +34,60 @@ namespace CUAS.MMT
         //new Soundlist
         private List<AudioClip> soundList = new List<AudioClip>();
 
+
+
         public enum Sound
+        {
+
+            //Skeleton
+            SkeletonRun,
+            SkeletonAttack,
+            SkeletonImpact,
+            SkeletonDeath,
+
+            //Bear
+            BearRun,
+            BearAttack,
+            BearImpact,
+            BearDeath,
+
+            //Metalon
+            MetalonRun,
+            Metalonttack,
+            MetalonImpact,
+            MetalonDeath,
+
+            //Player
+            PlayerRun,
+            PlayerAttack,
+            PlayerImpact,
+            PlayerDeath,
+            PlayerDodge,
+            PlayerPickUp,
+            PlayerJump,
+
+            //Dragon
+            DragonWalk,
+            DragonRun,
+            DragonAttack,
+            DragonImpact,
+            DragonFly,
+            DragonDeath,
+            DragonRoar,
+            //
+            Collect,
+            Win,
+            Jump,
+            HitEnemy,
+            HitPlayer,
+            Alert,
+            Miss,
+            Bump,
+            Doorbutton
+        }
+
+
+             public enum Skeleton
         {
             Collect,
             Win,

@@ -7,6 +7,11 @@ TagManager:
   - Ragdoll
   - TrapDetector
   - StartFight
+  - StoneColliderT
+  - AttackColliderT
+  - DodgeColliderT
+  - JumpColliderT
+  - BossColliderT
   layers:
   - Default
   - TransparentFX
