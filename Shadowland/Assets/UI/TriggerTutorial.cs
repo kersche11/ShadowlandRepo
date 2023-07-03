@@ -18,11 +18,7 @@ public class TriggerTutorial : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        attackImage.SetActive(false);
-        jumpImage.SetActive(false);
-        dodgeImage.SetActive(false);
-        stoneImage.SetActive(false);
-        bossImage.SetActive(false);
+        DisableTutorialImages();
     }
 
     // Update is called once per frame
@@ -73,6 +69,15 @@ public class TriggerTutorial : MonoBehaviour
         jumpImage.SetActive(false);
         stoneImage.SetActive(false);
         dodgeImage.SetActive(false);
+        bossImage.SetActive(false);
+    }
+
+    public void DisableTutorialImages()
+    {
+        attackImage.SetActive(false);
+        jumpImage.SetActive(false);
+        dodgeImage.SetActive(false);
+        stoneImage.SetActive(false);
         bossImage.SetActive(false);
     }
 }

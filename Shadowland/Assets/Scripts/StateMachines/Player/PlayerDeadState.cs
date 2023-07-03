@@ -12,7 +12,7 @@ public class PlayerDeadState : PlayerBaseState
     {
         //Ragdoll
         stateMachine.Ragdoll.ToggleRagdoll(true);
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             stateMachine.StoneCarryHandler?.SetStone();
         }

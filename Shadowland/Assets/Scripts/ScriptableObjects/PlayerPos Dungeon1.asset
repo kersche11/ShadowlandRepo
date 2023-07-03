@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47cfa00c5ba182942860aac13b7c17bd, type: 3}
+  m_Name: PlayerPos Dungeon1
+  m_EditorClassIdentifier: 
+  _playerPos: {x: -129.42, y: 67.33, z: 179.27}
+  _playerRot: {x: 0, y: -0.004363309, z: 0, w: 0.99999046}

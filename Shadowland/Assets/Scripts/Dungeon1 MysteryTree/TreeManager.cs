@@ -72,7 +72,8 @@ public class TreeManager : MonoBehaviour
                     //Change to OpenWorld
                     win = true;
                     Treasure.SetActive(true);
-                    SceneChangeOpenWorld.SetActive(true);
+                    //SceneChangeOpenWorld.SetActive(true);
+                    //LevelManager.Instance.IncreaseDiamondCount();
                 }
                 numberOfCorrectTrees++;
             }

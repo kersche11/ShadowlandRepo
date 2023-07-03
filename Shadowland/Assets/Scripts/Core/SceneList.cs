@@ -8,13 +8,12 @@ public class SceneList : MonoBehaviour
 
     public enum SceneNames
     {
-       
+        StartMenu,
         OpenWorld,
         DungeonOne,
         DungeonTwo,
         DungeonThree,
-        DungeonFour,
-        StartMenu,
+        DungeonFour,  
         Intro
     }
 
@@ -45,15 +44,17 @@ public class SceneList : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
 
+        
         PlayerCollider = player.GetComponent<Collider>();
-        Debug.Log(player.gameObject.name);
-        Debug.Log(PlayerCollider);
+       
     }
 
     public void LoadScene()
     {
         int Index = ((int)selectedScene);
+        LevelManager.Instance.ChangeLevel(Index);
         SceneManager.LoadScene(Index);
+        
     }
 
 

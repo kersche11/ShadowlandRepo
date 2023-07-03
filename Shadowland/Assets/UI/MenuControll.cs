@@ -1,3 +1,4 @@
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ public class MenuControll : MonoBehaviour
 
     [SerializeField] GameObject about;
     [SerializeField] GameObject controls;
-
+    [SerializeField] TriggerTutorial triggerTutorial;
     [SerializeField] GameObject menu;
     private bool isMenuOpen;
 
@@ -24,7 +25,7 @@ public class MenuControll : MonoBehaviour
     void Start()
     {
 
-        if (SceneManager.GetActiveScene().buildIndex != 5)
+        if (SceneManager.GetActiveScene().buildIndex != 0)
         {
 
             isMenuOpen = false;
@@ -48,7 +49,7 @@ public class MenuControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isMenuOpen);
+        
         if (Input.GetKeyDown(KeyCode.Escape))
         {
 
@@ -58,7 +59,7 @@ public class MenuControll : MonoBehaviour
                 Cursor.visible = true;
                 OnOpen();
             }
-            else if (isMenuOpen == true && SceneManager.GetActiveScene().buildIndex != 5)
+            else if (isMenuOpen == true && SceneManager.GetActiveScene().buildIndex != 0)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
@@ -81,6 +82,7 @@ public class MenuControll : MonoBehaviour
     private void OnOpen()
     {
         menu.SetActive(true);
+        triggerTutorial.DisableTutorialImages();
         //einfrieren
         Time.timeScale = 0f;
         isMenuOpen = true;
@@ -142,7 +144,9 @@ public class MenuControll : MonoBehaviour
         {
             SetFalse();
             menu.SetActive(false);
+            LevelManager.Instance.ChangeLevel(1);
             SceneManager.LoadScene("OpenWorld");
+            PlayerPrefs.SetInt(LevelManager.Instance.scorekey, 0);
 
         });
 

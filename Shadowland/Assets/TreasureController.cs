@@ -25,6 +25,8 @@ public class TreasureController : MonoBehaviour
             animator.CrossFadeInFixedTime(TreasureHash, CrossFixedTimeDuration);
             hasCollided = true;
             SceneLoaderOpenWorld.SetActive(true);
+            LevelManager.Instance.IncreaseDiamondCount();
+            Debug.Log("DiamondCount: " + LevelManager.Instance.GetDiamondCount());
         }
     }
 }

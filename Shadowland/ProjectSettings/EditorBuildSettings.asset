@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: a42ea0733bee77347b3eec6dd71e9b65
+  - enabled: 1
     path: Assets/Scenes/OpenWorld.unity
     guid: d1c3109bdb54ad54c8a2b2838528e640
   - enabled: 1
@@ -20,7 +23,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonFour_Endboss.unity
     guid: 88b165ec65cad244b90648b9a530a376
-  - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: a42ea0733bee77347b3eec6dd71e9b65
   m_configObjects: {}

@@ -15,7 +15,7 @@ public class PlayerImpactState : PlayerBaseState
     public override void Enter()
     {
         //Wenn der Player von eineme Enemy getroffen wird muss er den Stein fallen lassen
-        if (SceneManager.GetActiveScene().buildIndex == 2)
+        if (SceneManager.GetActiveScene().buildIndex == 3)
         {
             stateMachine.StoneCarryHandler?.SetStone();
             stateMachine.InputReader?.SetCarrying();
