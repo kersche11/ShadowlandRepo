@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 public class ButtonHandler : MonoBehaviour
 {
@@ -7,8 +5,8 @@ public class ButtonHandler : MonoBehaviour
     [SerializeField] Stone stone;
     [SerializeField] GameObject ElementToSetActive;
     [SerializeField] GameObject SceneLoader;
-    
-   
+
+
     private readonly int BtnDownHash = Animator.StringToHash("BtnDown");
     private const float CrossFadeDuration = 0.1f;
 
@@ -24,12 +22,12 @@ public class ButtonHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-    if (other == stone.GetComponent<Collider>())
+        if (other == stone.GetComponent<Collider>())
         {
             animator.Play("BtnDown");
             ElementToSetActive.SetActive(true);
         }
-               
+
     }
 
     private void OnTriggerExit(Collider other)

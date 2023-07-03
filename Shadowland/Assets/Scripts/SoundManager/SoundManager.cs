@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -20,7 +19,7 @@ namespace CUAS.MMT
         AudioClip miss;
         AudioClip bump;
         AudioClip doorbutton;
-        
+
 
         GameObject soundGameObject = null;
         AudioSource audioSource = null;
@@ -74,7 +73,27 @@ namespace CUAS.MMT
             DragonFly,
             DragonDeath,
             DragonRoar,
-            //
+
+
+            //DungeonOne
+            DungeonOneCutTree,
+            DungeonOneEnemyRespawn,
+            DungeonOneTreeRespawn,
+            DungeonOneBGMusic,
+
+            //DungeonTwo
+            DungeonTwoTrapTrigger,
+            DungeonTwoPressurePlate,
+            DungeonTwoLanternsFlicker,
+            DungeonTwoBGMusic,
+
+            //DungeonThree
+            DungeonThreeTrapTrigger,
+            DungeonThreePressurePlate,
+            DungeonThreeLanternsFlicker,
+            DungeonThreeBGMusic,
+
+
             Collect,
             Win,
             Jump,
@@ -87,7 +106,7 @@ namespace CUAS.MMT
         }
 
 
-             public enum Skeleton
+        public enum Skeleton
         {
             Collect,
             Win,
@@ -121,7 +140,7 @@ namespace CUAS.MMT
                 soundList.Add(Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-25"));
                 soundList.Add(Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-03"));
                 soundList.Add(Resources.Load<AudioClip>("zelda"));
-                
+
 
                 //collect = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-33");
                 //win = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-18");
@@ -135,10 +154,10 @@ namespace CUAS.MMT
 
 
         }
-        
+
         public void PlaySound(Sound sound, bool check = false)
         {
-            if(check)
+            if (check)
             {
                 if (!audioSource.isPlaying)
                 {
@@ -151,7 +170,7 @@ namespace CUAS.MMT
             }
 
             //Play sounds
-            
+
 
             //if (sound == Sound.Collect)
             //{

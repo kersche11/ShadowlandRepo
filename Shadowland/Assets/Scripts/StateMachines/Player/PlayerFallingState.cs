@@ -1,9 +1,6 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFallingState :PlayerBaseState
+public class PlayerFallingState : PlayerBaseState
 {
     private readonly int FallHash = Animator.StringToHash("Fall");
 
@@ -22,7 +19,7 @@ public class PlayerFallingState :PlayerBaseState
         stateMachine.Animator.CrossFadeInFixedTime(FallHash, CrossFadeDuration);
 
         stateMachine.LedgeDetector.OnLedgeDetect += HandleLedgeDetection;
-        
+
     }
 
     public override void Tick(float deltaTime)
@@ -30,10 +27,10 @@ public class PlayerFallingState :PlayerBaseState
 
         Vector3 movement = CalculateMovement();
         movement += momentum;
-        Move(movement,deltaTime);
+        Move(movement, deltaTime);
 
         //Wenn der Player am Boden landet kehrt er in den FreelookState oder TargetState zurück.
-         if(stateMachine.CharacterController.isGrounded)
+        if (stateMachine.CharacterController.isGrounded)
         {
             ReturnToLocomation();
         }
@@ -48,7 +45,7 @@ public class PlayerFallingState :PlayerBaseState
 
     private void HandleLedgeDetection(Vector3 ledgeForward, Vector3 closetPoint)
     {
-       stateMachine.SwitchState(new PlayerHangingState(stateMachine, ledgeForward,closetPoint));
+        stateMachine.SwitchState(new PlayerHangingState(stateMachine, ledgeForward, closetPoint));
     }
 
     private Vector3 CalculateMovement()

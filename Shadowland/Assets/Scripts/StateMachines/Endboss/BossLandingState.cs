@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossLandingState : BossBaseState
@@ -26,10 +24,10 @@ public class BossLandingState : BossBaseState
     {
         stateMachine.Animator.CrossFadeInFixedTime(flyHash, CrossFadeDuration);
         TargetNextWaypoint();
-       
+
     }
 
-   
+
 
     public override void Tick(float deltaTime)
     {
@@ -57,7 +55,7 @@ public class BossLandingState : BossBaseState
     }
     public override void Exit()
     {
-        
+
     }
 
     private void TargetNextWaypoint()

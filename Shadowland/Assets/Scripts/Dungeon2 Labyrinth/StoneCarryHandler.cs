@@ -1,11 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StoneCarryHandler : MonoBehaviour
 {
     [field: SerializeField] public StoneCarryPosition StonePosition { get; private set; }
- 
+
 
     private Stone stone;
 
@@ -24,7 +22,7 @@ public class StoneCarryHandler : MonoBehaviour
 
     public void GetStone()
     {
-        
+
         stone.GetComponent<Rigidbody>().isKinematic = true;
         stone.GetComponent<Rigidbody>().detectCollisions = false;
         this.stone.transform.SetParent(StonePosition.transform);
@@ -36,7 +34,7 @@ public class StoneCarryHandler : MonoBehaviour
         stone.GetComponent<Rigidbody>().detectCollisions = true;
         this.stone.transform.SetParent(null);
         stone = null;
-        
+
     }
 
     public void SetCurrentStone(Stone currentStone)

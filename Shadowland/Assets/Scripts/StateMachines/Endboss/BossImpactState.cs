@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossImpactState : BossBaseState
@@ -29,7 +27,7 @@ public class BossImpactState : BossBaseState
     }
     public override void Exit()
     {
-       
+
     }
 
 

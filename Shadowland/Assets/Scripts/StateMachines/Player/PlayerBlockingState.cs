@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBlockingState : PlayerBaseState
@@ -21,7 +19,7 @@ public class PlayerBlockingState : PlayerBaseState
     public override void Tick(float deltaTime)
     {
         Move(deltaTime);
-        if (!stateMachine.InputReader.IsBlocking) 
+        if (!stateMachine.InputReader.IsBlocking)
         {
             if (stateMachine.Targeter.CurrentTarget == null)
             {
@@ -31,7 +29,7 @@ public class PlayerBlockingState : PlayerBaseState
             stateMachine.SwitchState(new PlayerTargetingSate(stateMachine));
             return;
         }
-        
+
     }
     public override void Exit()
     {

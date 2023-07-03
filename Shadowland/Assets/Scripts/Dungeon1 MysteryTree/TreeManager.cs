@@ -1,11 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.XR;
-using static UnityEditor.PlayerSettings;
 
 public class TreeManager : MonoBehaviour
 {
@@ -27,7 +20,7 @@ public class TreeManager : MonoBehaviour
     private int numberOfCorrectTrees;
     private int numberOfFails;
     private bool isFighting;
-    public bool win {get; private set;}
+    public bool win { get; private set; }
 
 
     private void Start()
@@ -38,43 +31,43 @@ public class TreeManager : MonoBehaviour
         numberOfFails = 0;
         win = false;
         Treasure.SetActive(false);
-}
+    }
 
     private void Update()
     {
         if (isFighting)
         {
-           
+
             if (spawnedEnemy.childCount == 0)
             {
                 isFighting = false;
                 ResetTreesRandom();
-            }        
+            }
         }
     }
     public void CheckTreeOrder(MysteryTree mysteryTree)
     {
         if (mysteryTree == null) { return; }
-       
+
         int ordernumber = System.Array.IndexOf(correctTreeOrder, mysteryTree);
 
-        if (ordernumber <= -1) {  return; }
+        if (ordernumber <= -1) { return; }
 
         Debug.Log($"Ordernumber = {ordernumber}");
 
         if (ordernumber >= 5)
-        {         
+        {
             SpawnEnemies(numberOfFails);
         }
 
-        else if (ordernumber < 5) 
+        else if (ordernumber < 5)
         {
-          if (ordernumber == numberOfCorrectTrees) 
+            if (ordernumber == numberOfCorrectTrees)
             {
 
                 Debug.Log("Correkt Tree");
-                
-                if (numberOfCorrectTrees==4)
+
+                if (numberOfCorrectTrees == 4)
                 {
                     //Change to OpenWorld
                     win = true;
@@ -83,36 +76,36 @@ public class TreeManager : MonoBehaviour
                 }
                 numberOfCorrectTrees++;
             }
-          else
+            else
             {
                 SpawnEnemies(numberOfFails);
                 numberOfCorrectTrees = 0;
-                
+
             }
-        }     
+        }
     }
 
     private void SpawnEnemies(int failCount)
     {
         DeaktivateTreeCollition();
-        isFighting = true;  
+        isFighting = true;
         numberOfFails++;
         Debug.Log("Spawn Enemies now!");
         Debug.Log("Fails:" + numberOfFails);
 
         for (int i = 0; i < numberOfFails; i++)
         {
-            
+
             _xAxis = EnemySpawnPoint.position.x + Random.Range(SpawnRangeMin.x, SpawnRangeMax.x);
             _yAxis = EnemySpawnPoint.position.z + Random.Range(SpawnRangeMin.y, SpawnRangeMax.y);
-            _zAxis = EnemySpawnPoint.position.z +Random.Range(SpawnRangeMin.z, SpawnRangeMax.z);
+            _zAxis = EnemySpawnPoint.position.z + Random.Range(SpawnRangeMin.z, SpawnRangeMax.z);
 
-            Vector3 _randomPosition = new Vector3(_xAxis,_yAxis,_zAxis);
+            Vector3 _randomPosition = new Vector3(_xAxis, _yAxis, _zAxis);
 
             GameObject spawn = Instantiate(Enemy, _randomPosition, Quaternion.identity) as GameObject; //Maze! NavMesh!
             spawn.transform.SetParent(spawnedEnemy);
-           
-        }        
+
+        }
     }
 
     private void ResetTreesRandom()
@@ -124,7 +117,7 @@ public class TreeManager : MonoBehaviour
             {
                 tree.gameObject.SetActive(true);
             }
-           
+
             //tree.health.ResetHealth(1);
         }
 
@@ -132,15 +125,15 @@ public class TreeManager : MonoBehaviour
 
         foreach (var tree in correctTreeOrder)
         {
-            
-            int rand= Random.Range(0, 9);
-            
+
+            int rand = Random.Range(0, 9);
+
 
             while (treePostions[rand].transform.childCount >= 1)
             {
                 Debug.Log("NEW Rand");
                 rand = Random.Range(0, 9);
-               
+
             }
             if (treePostions[rand].transform.childCount == 0)
             {

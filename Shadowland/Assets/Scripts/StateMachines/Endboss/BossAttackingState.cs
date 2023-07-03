@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossAttackingState : BossBaseState
@@ -15,9 +13,9 @@ public class BossAttackingState : BossBaseState
 
     public override void Enter()
     {
-       
-       stateMachine.Weapon.SetAttack(stateMachine.AttackDamage, stateMachine.AttackKnockback);
-       stateMachine.Animator.CrossFadeInFixedTime(AttackHash, TransitionDuration);
+
+        stateMachine.Weapon.SetAttack(stateMachine.AttackDamage, stateMachine.AttackKnockback);
+        stateMachine.Animator.CrossFadeInFixedTime(AttackHash, TransitionDuration);
     }
 
     public override void Tick(float deltaTime)
@@ -25,7 +23,7 @@ public class BossAttackingState : BossBaseState
         //Nach der AttackAnimation gehen wir in den ChasingState
         //Sollte der Player noch in der AttackingRange sein geht der Gegner sofort wieder in den Attackstate
         //und führt die nächste Attack aus.
-        if(GetNormallizedTime(stateMachine.Animator,"Attack")>=1)
+        if (GetNormallizedTime(stateMachine.Animator, "Attack") >= 1)
         {
             stateMachine.SwitchState(new BossChasingWalkState(stateMachine));
         }

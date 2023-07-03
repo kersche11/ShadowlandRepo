@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 public class FloatingController : MonoBehaviour
 {
@@ -8,7 +8,7 @@ public class FloatingController : MonoBehaviour
     public bool animatePots = true;
 
     private Transform potTF;
-    private Vector3 wantedPosition, rotationVector = new Vector3(0,1,0), startPostion;
+    private Vector3 wantedPosition, rotationVector = new Vector3(0, 1, 0), startPostion;
     private float wantedHeight, startHeight, evalAnimCurve;
     private Coroutine floatPotsCoroutine;
 

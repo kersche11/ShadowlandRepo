@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //The PlayerStateMachine erbt das MonoBehaviour über die StateMachine Klasse.
@@ -10,7 +8,7 @@ public class PlayerStateMachine : StateMachine
     //Unity Serialisiert von alleine (public) keine Properties nur Fields! => [field:SerializeField]
     //Ohne [field:SerializeField] wird im Inspector nichts angezeigt
 
-    [field: SerializeField] public InputReader InputReader{get; private set;}
+    [field: SerializeField] public InputReader InputReader { get; private set; }
 
     //Den Character Controller braucht man um kollisonen zu handeln 
     [field: SerializeField] public CharacterController CharacterController { get; private set; }
@@ -43,7 +41,8 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float JumpRange { get; private set; }
 
 
-    public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;  
+
+    public float PreviousDodgeTime { get; private set; } = Mathf.NegativeInfinity;
 
     //Um den Player in Abhängigkeit der Kamera zu steuern (relative to Camera) brauchen wir die Transform der MainCamera
     public Transform MainCameraTransform { get; private set; }
@@ -57,7 +56,7 @@ public class PlayerStateMachine : StateMachine
         MainCameraTransform = Camera.main.transform;
 
         //"This" referenziert auf die Instanz in der wir uns gerade befinden.
-        SwitchState(new PlayerFreeLookState(this)); 
+        SwitchState(new PlayerFreeLookState(this));
     }
 
     //Wenn dieses Script aktiv ist subscribe das event OnTakeDamage im Health.cs script

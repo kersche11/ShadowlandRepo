@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEditor.SceneManagement;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,7 +6,9 @@ using UnityEngine.SceneManagement;
 public class SceneList : MonoBehaviour
 {
 
-    public enum SceneNames { 
+    public enum SceneNames
+    {
+       
         OpenWorld,
         DungeonOne,
         DungeonTwo,
@@ -20,8 +18,8 @@ public class SceneList : MonoBehaviour
         Intro
     }
 
-    public Collider PlayerCollider {get;private set;}
-    [field:SerializeField] public SceneNames selectedScene{get;private set;}
+    public Collider PlayerCollider { get; private set; }
+    [field: SerializeField] public SceneNames selectedScene { get; private set; }
 
     //private Dictionary<string, int> sceneData = new Dictionary<string, int>
     //{
@@ -37,16 +35,16 @@ public class SceneList : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (PlayerCollider == null) { Debug.Log("Null"); return; }
-        if (other != PlayerCollider) {Debug.Log("NotPlayer"); return; }
-        
-            Debug.Log("Load Scene");
-            LoadScene();
+        if (other != PlayerCollider) { Debug.Log("NotPlayer"); return; }
+
+        Debug.Log("Load Scene");
+        LoadScene();
     }
 
     private void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        
+
         PlayerCollider = player.GetComponent<Collider>();
         Debug.Log(player.gameObject.name);
         Debug.Log(PlayerCollider);

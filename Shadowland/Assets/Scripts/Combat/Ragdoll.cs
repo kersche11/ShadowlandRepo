@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Ragdoll : MonoBehaviour
@@ -30,9 +28,9 @@ public class Ragdoll : MonoBehaviour
     {
         foreach (Collider collider in allColliders)
         {
-            if(collider.gameObject.CompareTag("Ragdoll"))
+            if (collider.gameObject.CompareTag("Ragdoll"))
             {
-                collider.enabled = isRagdoll;   
+                collider.enabled = isRagdoll;
             }
 
         }

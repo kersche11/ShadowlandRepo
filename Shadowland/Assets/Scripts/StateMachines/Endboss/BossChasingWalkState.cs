@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossChasingWalkState : BossBaseState
@@ -11,11 +8,11 @@ public class BossChasingWalkState : BossBaseState
 
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
-    public BossChasingWalkState(BossStateMachine stateMachine) : base(stateMachine){}
+    public BossChasingWalkState(BossStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
     {
-    
+
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
 
     }
@@ -40,7 +37,7 @@ public class BossChasingWalkState : BossBaseState
         stateMachine.Animator.SetFloat(speedHash, 1f, AnimatorDampTime, deltaTime);
     }
 
-  
+
 
     public override void Exit()
     {
@@ -64,10 +61,10 @@ public class BossChasingWalkState : BossBaseState
     private bool IsInAttackRange()
     {
         //Check ob der Player noch lebt 
-        if (stateMachine.Player.IsDead){ return false; }
+        if (stateMachine.Player.IsDead) { return false; }
 
-        float playerDistanceSqr=(stateMachine.Player.transform.position-stateMachine.transform.position).sqrMagnitude;
+        float playerDistanceSqr = (stateMachine.Player.transform.position - stateMachine.transform.position).sqrMagnitude;
 
-        return playerDistanceSqr <= stateMachine.AttackRange*stateMachine.AttackRange;
+        return playerDistanceSqr <= stateMachine.AttackRange * stateMachine.AttackRange;
     }
 }

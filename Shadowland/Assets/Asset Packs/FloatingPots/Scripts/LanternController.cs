@@ -16,7 +16,7 @@ public class LanternController : MonoBehaviour
     void Start()
     {
         myLight = GetComponentInChildren<Light>();
-        myParticles = GetComponentInChildren<ParticleSystem>();     
+        myParticles = GetComponentInChildren<ParticleSystem>();
 
         if (lightsEnabledOnStart)
             ToggleLight();

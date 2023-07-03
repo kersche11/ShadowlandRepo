@@ -1,11 +1,10 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Video;
 
 public class TriggerTutorial : MonoBehaviour
 {
-   
+
     [SerializeField] GameObject attackImage;
     [SerializeField] GameObject jumpImage;
     [SerializeField] GameObject dodgeImage;
@@ -20,7 +19,7 @@ public class TriggerTutorial : MonoBehaviour
     void Start()
     {
         attackImage.SetActive(false);
-        jumpImage.SetActive(false); 
+        jumpImage.SetActive(false);
         dodgeImage.SetActive(false);
         stoneImage.SetActive(false);
         bossImage.SetActive(false);
@@ -29,7 +28,7 @@ public class TriggerTutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -62,7 +61,7 @@ public class TriggerTutorial : MonoBehaviour
         if (other.CompareTag("BossColliderT"))
         {
             bossImage.SetActive(true);
-           StartCoroutine (Einblenden());
+            StartCoroutine(Einblenden());
         }
 
     }
@@ -72,8 +71,8 @@ public class TriggerTutorial : MonoBehaviour
         yield return new WaitForSeconds(5);
         attackImage.SetActive(false);
         jumpImage.SetActive(false);
-        stoneImage.SetActive(false );
-        dodgeImage .SetActive(false);
-        bossImage .SetActive(false);
+        stoneImage.SetActive(false);
+        dodgeImage.SetActive(false);
+        bossImage.SetActive(false);
     }
 }

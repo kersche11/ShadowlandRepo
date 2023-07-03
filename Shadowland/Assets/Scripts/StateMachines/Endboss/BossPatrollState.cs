@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class BossPatrollState : BossBaseState
 {
@@ -31,25 +26,25 @@ public class BossPatrollState : BossBaseState
 
     public override void Enter()
     {
-        _targetCount= 0;
+        _targetCount = 0;
         stateMachine.Animator.CrossFadeInFixedTime(flyHash, CrossFadeDuration);
         stateMachine.startFightTrigger.FightEvent += OnFight;
         TargetNextWaypoint();
     }
 
-   
+
 
     public override void Tick(float deltaTime)
     {
 
-       if (_targetCount == 3)
+        if (_targetCount == 3)
         {
             stateMachine.Animator.CrossFadeInFixedTime(glideHash, CrossFadeDuration);
         }
 
         if (Vector3.Distance(stateMachine.WaypointCenter.transform.position, _previousWaypoint.position) < 0.01f)
         {
-         
+
             // _currentWaypointIndex = (_currentWaypointIndex + 1) % waypoints.Length;
         }
         else
@@ -58,7 +53,7 @@ public class BossPatrollState : BossBaseState
                 stateMachine.WaypointCenter.transform.position,
                 _previousWaypoint.position,
                 stateMachine.MovementSpeed * Time.deltaTime);
-            stateMachine.WaypointCenter.transform.LookAt (_previousWaypoint.position);
+            stateMachine.WaypointCenter.transform.LookAt(_previousWaypoint.position);
         }
 
 
@@ -111,7 +106,7 @@ public class BossPatrollState : BossBaseState
     private void MoveToWaypoint(float deltaTime)
     {
 
-        
+
 
         ////Checkt ob das NavMesh mit der Playervelosity übereinstimmt
         //if (stateMachine.navMeshAgent.isOnNavMesh)

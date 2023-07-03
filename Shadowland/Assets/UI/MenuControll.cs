@@ -1,52 +1,68 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
 public class MenuControll : MonoBehaviour
 {
+    [SerializeField] Button? buttonStartGame;
+    [SerializeField] Button? buttonMainMenu;
     [SerializeField] Button buttonExit;
     [SerializeField] Button buttonAbout;
-    [SerializeField] Button buttonControls;    
+    [SerializeField] Button buttonControls;
     [SerializeField] Button buttonBack;
 
-    [SerializeField] GameObject about;   
+    [SerializeField] GameObject about;
     [SerializeField] GameObject controls;
 
     [SerializeField] GameObject menu;
     private bool isMenuOpen;
 
-   
+
 
     // Start is called before the first frame update
     void Start()
     {
-      
-        SetFalse();        
-        isMenuOpen = false;       
-       
+
+        if (SceneManager.GetActiveScene().buildIndex != 5)
+        {
+
+            isMenuOpen = false;
+            SetFalse();
+            OnClosed();
+        }
+        else
+        {
+            isMenuOpen = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+            //SetFalse();
+            Time.timeScale = 1f;
+            ActivateButton();
+        }
+
+
     }
 
     // Update is called once per frame
     void Update()
-    {        
-          if (Input.GetKeyDown(KeyCode.Escape))
-          {
+    {
+        Debug.Log(isMenuOpen);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
 
-            if(isMenuOpen == false)
+            if (isMenuOpen == false)
             {
                 Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;                
-                OnOpen();                
+                Cursor.visible = true;
+                OnOpen();
             }
-            else
+            else if (isMenuOpen == true && SceneManager.GetActiveScene().buildIndex != 5)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
-                OnClosed();                
+                OnClosed();
             }
         }
     }
@@ -58,7 +74,7 @@ public class MenuControll : MonoBehaviour
         //einfrieren
         Time.timeScale = 1f;
         isMenuOpen = false;
-        
+
 
     }
 
@@ -77,17 +93,17 @@ public class MenuControll : MonoBehaviour
     {
         menu.SetActive(false);
         about.SetActive(false);
-       
+
         controls.SetActive(false);
         buttonBack.gameObject.SetActive(false);
-        
+
     }
     public void ActivateButton()
     {
         buttonExit.onClick.AddListener(() =>
         {
             Debug.Log("Exit");
-            Application.Quit();            
+            Application.Quit();
 
         });
         buttonAbout.onClick.AddListener(() =>
@@ -97,7 +113,7 @@ public class MenuControll : MonoBehaviour
 
 
         });
-       
+
         buttonControls.onClick.AddListener(() =>
         {
             controls.SetActive(true);
@@ -107,9 +123,27 @@ public class MenuControll : MonoBehaviour
         });
         buttonBack.onClick.AddListener(() =>
         {
-                SetFalse();
-                menu.SetActive(true);           
-                        
+            SetFalse();
+            menu.SetActive(true);
+
+        });
+
+
+        buttonMainMenu?.onClick.AddListener(() =>
+        {
+            SetFalse();
+            menu.SetActive(false);
+            SceneManager.LoadScene("MainMenu");
+
+        });
+
+
+        buttonStartGame?.onClick.AddListener(() =>
+        {
+            SetFalse();
+            menu.SetActive(false);
+            SceneManager.LoadScene("OpenWorld");
+
         });
 
 

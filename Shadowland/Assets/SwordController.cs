@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SwordController : MonoBehaviour
@@ -16,8 +14,8 @@ public class SwordController : MonoBehaviour
     private void Update()
     {
         transform.position = Righthand.transform.position;
-            transform.rotation = Righthand.transform.rotation;
-            
-        
+        transform.rotation = Righthand.transform.rotation;
+
+
     }
 }

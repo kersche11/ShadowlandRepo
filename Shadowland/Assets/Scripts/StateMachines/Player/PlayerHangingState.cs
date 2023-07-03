@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHangingState : PlayerBaseState
@@ -18,10 +16,10 @@ public class PlayerHangingState : PlayerBaseState
     public override void Enter()
     {
         //Schaue richtung der Kante
-        stateMachine.transform.rotation = Quaternion.LookRotation(ledgeForward,Vector3.up);
+        stateMachine.transform.rotation = Quaternion.LookRotation(ledgeForward, Vector3.up);
 
         stateMachine.CharacterController.enabled = false;
-        stateMachine.transform.position = closestPoint - (stateMachine.LedgeDetector.transform.position-stateMachine.transform.position);
+        stateMachine.transform.position = closestPoint - (stateMachine.LedgeDetector.transform.position - stateMachine.transform.position);
         stateMachine.CharacterController.enabled = true;
 
         stateMachine.Animator.CrossFadeInFixedTime(HangingHash, CrossFadeDuration);
@@ -29,7 +27,7 @@ public class PlayerHangingState : PlayerBaseState
 
     public override void Tick(float deltaTime)
     {
-       
+
         //Wenn die Taste S gedrückt wird, wechsle in den FallingState
         if (stateMachine.InputReader.MovementValue.y < 0f)
         {
@@ -39,15 +37,15 @@ public class PlayerHangingState : PlayerBaseState
         }
         else if (stateMachine.InputReader.MovementValue.y > 0f)
         {
-            
+
             stateMachine.SwitchState(new PlayerPullUpState(stateMachine));
         }
     }
 
     public override void Exit()
     {
-       
+
     }
 
-    
+
 }

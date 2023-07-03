@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DestroyAfterDead : MonoBehaviour
@@ -13,7 +11,7 @@ public class DestroyAfterDead : MonoBehaviour
     {
         if (Health.currentHealth == 0)
         {
-            if (CoolDown>0)
+            if (CoolDown > 0)
             {
                 CoolDown -= Time.deltaTime;
             }
@@ -21,7 +19,7 @@ public class DestroyAfterDead : MonoBehaviour
             {
                 GameObject.Destroy(this.gameObject);
             }
-               
+
         }
     }
 }

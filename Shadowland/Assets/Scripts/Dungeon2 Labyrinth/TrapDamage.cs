@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +8,7 @@ public class TrapDamage : MonoBehaviour
     [SerializeField] private float knockback;
 
     private List<Collider> alreadyCollidedWith = new List<Collider>();
- 
+
 
     //Sobald dieses Script aktiviert wird. Löschen wir alle Elemente aus der Liste
     //Bei einem Schlag kann es passieren das man ein Target 2x trifft.
@@ -26,7 +25,7 @@ public class TrapDamage : MonoBehaviour
         //Ignoriere meine eigenen Collider
         if (other == myCollider) { return; }
 
-        
+
 
         //Überprüfe ob das getroffene Target Health besitzt wenn ja,
         //DealDamage auf das getroffene Objekt

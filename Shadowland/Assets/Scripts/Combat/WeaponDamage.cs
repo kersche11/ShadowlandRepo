@@ -5,7 +5,7 @@ public class WeaponDamage : MonoBehaviour
 {
     //Hier kommt der Player Collider rein um nicht sich selbst schaden zuzufügen
     [SerializeField] private Collider myCollider;
-  
+
 
     private List<Collider> alreadyCollidedWith = new List<Collider>();
     private int damage;
@@ -25,7 +25,7 @@ public class WeaponDamage : MonoBehaviour
     {
         //Ignoriere meine eigenen Collider
         if (other == myCollider) { return; }
-      
+
         //Check ob das Target schon in der Liste ist, wann ja abbruch 
         if (alreadyCollidedWith.Contains(other)) { return; }
 
@@ -34,10 +34,10 @@ public class WeaponDamage : MonoBehaviour
 
         //Überprüfe ob das getroffene Target Health besitzt wenn ja,
         //DealDamage auf das getroffene Objekt
-        if (other.TryGetComponent<Health>(out Health health)) 
+        if (other.TryGetComponent<Health>(out Health health))
         {
             health.DealDamage(damage);
-            
+
         }
 
         //Wenn das getroffene Target einen ForceReseiver hat wird das Targert bei einem Hit zurückgeschleudert
@@ -45,14 +45,14 @@ public class WeaponDamage : MonoBehaviour
         if (other.TryGetComponent<ForceReceiver>(out ForceReceiver forceReceiver))
         {
             Vector3 forceDirection = (other.transform.position - myCollider.transform.position).normalized;
-            forceReceiver.AddForce(forceDirection*knockback);
+            forceReceiver.AddForce(forceDirection * knockback);
         }
 
     }
 
     public void SetAttack(int damage, float knockback)
     {
-       this.damage = damage;
-       this.knockback = knockback;
+        this.damage = damage;
+        this.knockback = knockback;
     }
 }

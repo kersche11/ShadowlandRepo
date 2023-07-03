@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
 public class MysteryTree : MonoBehaviour
 {
-    [field: SerializeField] public Health health {get; private set;}
+    [field: SerializeField] public Health health { get; private set; }
     [SerializeField] private MysteryTree mysteryTree;
-    [field:SerializeField] public TreeManager treeManager{get; private set;}
+    [field: SerializeField] public TreeManager treeManager { get; private set; }
 
 
     private void Update()
@@ -28,13 +26,13 @@ public class MysteryTree : MonoBehaviour
             }
         }
         else { return; }
-        
 
-       
+
+
     }
     //private void OnDestroy()
     //{
-       
+
     //}
-   
+
 }

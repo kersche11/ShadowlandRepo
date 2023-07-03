@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 //PlayerBaseState muss abstract sein weil State auch abstract ist.
@@ -11,13 +9,13 @@ public abstract class PlayerBaseState : State
     public PlayerBaseState(PlayerStateMachine stateMachine)
     {
         //Referenz zur PlayerStateMachine
-        this.stateMachine = stateMachine;   
+        this.stateMachine = stateMachine;
     }
 
     //Move für FreeLookState und TargetState
     protected void Move(Vector3 motion, float deltaTime)
     {
-       
+
         stateMachine.CharacterController.Move((motion + stateMachine.ForceReceiver.Movement) * deltaTime);
     }
 
@@ -25,7 +23,7 @@ public abstract class PlayerBaseState : State
     protected void Move(float deltaTime)
     {
 
-        Move(Vector3.zero,deltaTime);
+        Move(Vector3.zero, deltaTime);
     }
 
     //Im PlayerTargetState wollen wir immer Richtung Target schauen
@@ -35,9 +33,9 @@ public abstract class PlayerBaseState : State
     //Für die Rotation wandeln wir den Vector on Quaternione um.
     protected void FaceTarget()
     {
-        if(stateMachine.Targeter.CurrentTarget == null) { return; }
+        if (stateMachine.Targeter.CurrentTarget == null) { return; }
 
-        Vector3 lookPositon = stateMachine.Targeter.CurrentTarget.transform.position-stateMachine.transform.position;
+        Vector3 lookPositon = stateMachine.Targeter.CurrentTarget.transform.position - stateMachine.transform.position;
 
         lookPositon.y = 0f;
 
@@ -47,13 +45,13 @@ public abstract class PlayerBaseState : State
     //Je nach Bedingung kehren wir in den TargetingState oder FreeLookState zurück
     protected void ReturnToLocomation()
     {
-        if (stateMachine.Targeter.CurrentTarget!=null)
+        if (stateMachine.Targeter.CurrentTarget != null)
         {
             stateMachine.SwitchState(new PlayerTargetingSate(stateMachine));
         }
         else
         {
-           stateMachine.SwitchState(new PlayerFreeLookState(stateMachine)); 
+            stateMachine.SwitchState(new PlayerFreeLookState(stateMachine));
         }
     }
 

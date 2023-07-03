@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class BossDeadState : BossBaseState
@@ -13,7 +11,7 @@ public class BossDeadState : BossBaseState
         //stateMachine.Ragdoll.ToggleRagdoll(true);
         stateMachine.Weapon.gameObject.SetActive(false);
         GameObject.Destroy(stateMachine.Target);
-        
+
     }
     public override void Tick(float deltaTime)
     {

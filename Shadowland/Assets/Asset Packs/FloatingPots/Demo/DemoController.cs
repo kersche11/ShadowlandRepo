@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DemoController : MonoBehaviour
 {
@@ -35,7 +35,7 @@ public class DemoController : MonoBehaviour
             ToggleColorChange();
 
         if (Input.GetKeyDown(KeyCode.R))
-        rotateCam = !rotateCam;
+            rotateCam = !rotateCam;
 
         if (rotateCam)
             camBaseTF.Rotate(Vector3.up, Time.deltaTime * -8f);

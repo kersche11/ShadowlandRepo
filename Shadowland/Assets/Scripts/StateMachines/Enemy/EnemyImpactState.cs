@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyImpactState : EnemyBaseState
@@ -29,7 +27,7 @@ public class EnemyImpactState : EnemyBaseState
     }
     public override void Exit()
     {
-       
+
     }
 
 

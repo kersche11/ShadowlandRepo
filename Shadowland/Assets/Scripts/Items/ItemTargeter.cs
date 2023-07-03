@@ -1,12 +1,9 @@
-using Cinemachine;
-using System.Collections;
 using System.Collections.Generic;
-using System.Drawing.Text;
 using UnityEngine;
 
 public class ItemTargeter : MonoBehaviour
 {
-    private List<Stone> stones=new List<Stone>();
+    private List<Stone> stones = new List<Stone>();
     private List<Item> items = new List<Item>();
 
     private Camera mainCamera;
@@ -21,31 +18,31 @@ public class ItemTargeter : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.TryGetComponent<Stone>(out Stone stone)) 
+        if (other.TryGetComponent<Stone>(out Stone stone))
         {
             stones.Add(stone);
         }
-        
 
-        if (other.TryGetComponent<Item>(out Item item)) 
+
+        if (other.TryGetComponent<Item>(out Item item))
         {
             items.Add(item);
         }
-        
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent<Stone>(out Stone stone)) 
+        if (other.TryGetComponent<Stone>(out Stone stone))
         {
             RemoveStone(stone);
         }
-       
-        if (other.TryGetComponent<Item>(out Item item)) 
+
+        if (other.TryGetComponent<Item>(out Item item))
         {
             RemoveItem(item);
         }
-        
+
     }
 
 
@@ -93,7 +90,7 @@ public class ItemTargeter : MonoBehaviour
 
         CurrentStone = closestStone;
 
-     
+
 
         return true;
     }
@@ -102,7 +99,7 @@ public class ItemTargeter : MonoBehaviour
 
     //Zerstörtes Target wird aus der Targeterliste und aus der Cinemachineliste entfernt
     private void RemoveStone(Stone stone)
-    {       
+    {
         //Entfernen aus targets liste
         stones.Remove(stone);
     }

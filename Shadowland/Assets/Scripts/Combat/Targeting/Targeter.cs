@@ -1,5 +1,4 @@
 using Cinemachine;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,14 +12,14 @@ public class Targeter : MonoBehaviour
 
     private Camera mainCamera;
 
-    private List<Target> targets=new List<Target>();
+    private List<Target> targets = new List<Target>();
     public Target CurrentTarget { get; private set; }
 
-   
+
 
     private void Start()
     {
-       
+
         mainCamera = Camera.main;
     }
 
@@ -49,7 +48,7 @@ public class Targeter : MonoBehaviour
         //targets.Remove(target);
 
         //Other Version:
-        if(!other.TryGetComponent<Target>(out Target target)) {  return; }  
+        if (!other.TryGetComponent<Target>(out Target target)) { return; }
 
         //Entfernt Targets aus CM Group und Targeter Liste
         RemoveTarget(target);
@@ -86,7 +85,7 @@ public class Targeter : MonoBehaviour
 
             //Wenn die Distanz kleiner als die bisherige näheste Distanz ist
             //wird das neue Target zum "Closest Target"
-            if(distanceToCenter.sqrMagnitude < closestTargetDistance)
+            if (distanceToCenter.sqrMagnitude < closestTargetDistance)
             {
                 closestTarget = target;
                 closestTargetDistance = distanceToCenter.sqrMagnitude;
@@ -109,7 +108,7 @@ public class Targeter : MonoBehaviour
     public void Cancel()
     {
         if (CurrentTarget == null) { return; }
-      
+
         //Wenn man den TargetState verlässt wird das Target von der CM TargetGroup entfernt
         cinemachineTargetGroup.RemoveMember(CurrentTarget.transform);
 
@@ -120,11 +119,11 @@ public class Targeter : MonoBehaviour
     //Zerstörtes Target wird aus der Targeterliste und aus der Cinemachineliste entfernt
     private void RemoveTarget(Target target)
     {
-        if(CurrentTarget == target) 
+        if (CurrentTarget == target)
         {
             //Entfernen aus CM TargetGroup Liste
             cinemachineTargetGroup.RemoveMember(CurrentTarget.transform);
-            CurrentTarget=null;
+            CurrentTarget = null;
         }
 
         //Unsubscribe 

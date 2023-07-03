@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class BossLiftUpState : BossBaseState
 {
     public BossLiftUpState(BossStateMachine stateMachine) : base(stateMachine)

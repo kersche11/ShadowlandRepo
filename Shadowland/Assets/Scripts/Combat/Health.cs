@@ -1,13 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth = 100;
-    public float currentHealth {get; private set;}
+    [field: SerializeField] public Healthbar? HealthBar { get; private set; }
+
+    public float currentHealth { get; private set; }
     private bool isBlocking;
     private bool isInvulnerable;
 
@@ -21,7 +20,8 @@ public class Health : MonoBehaviour
     {
         isBlocking = false;
         isInvulnerable = false;
-        currentHealth = maxHealth; 
+        currentHealth = maxHealth;
+        HealthBar?.SetMaxHealth(currentHealth);
     }
 
     public void SetBlockingState(bool isBlocking)
@@ -39,7 +39,7 @@ public class Health : MonoBehaviour
         if (currentHealth == 0) { return; }
 
         //Wenn der Player Blockt bekommt er 80% weniger schaden.
-        if (isBlocking) 
+        if (isBlocking)
         {
             damage *= 0.2f;
         }
@@ -48,23 +48,29 @@ public class Health : MonoBehaviour
         {
             damage = 0;
         }
-        
+
         currentHealth -= damage;
-        
+
         if (currentHealth < 0) { currentHealth = 0; }
 
         //TakeDamageEvent um in den ImpactState zu wechseln
         OnTakeDamage?.Invoke();
-        
-        if (currentHealth ==0)
+
+        if (currentHealth == 0)
         {
             OnDie?.Invoke();
         }
+        HealthBar?.SetHealth(currentHealth);
         Debug.Log("Dealed Damage: " + damage);
     }
 
     public void ResetHealth(int health)
     {
         currentHealth = health;
+    }
+
+    public float GetHealth()
+    {
+        return currentHealth;
     }
 }

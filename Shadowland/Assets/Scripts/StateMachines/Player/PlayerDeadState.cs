@@ -1,13 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerDeadState : PlayerBaseState
 {
 
-    private float countdown=10;
+    private float countdown = 10;
     public PlayerDeadState(PlayerStateMachine stateMachine) : base(stateMachine)
     {
     }
@@ -23,13 +19,13 @@ public class PlayerDeadState : PlayerBaseState
         stateMachine.Weapon.gameObject.SetActive(false);
 
 
-        
+
 
         //Respawn
     }
     public override void Tick(float deltaTime)
     {
-       countdown -= deltaTime;
+        countdown -= deltaTime;
         if (countdown <= 0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -37,7 +33,7 @@ public class PlayerDeadState : PlayerBaseState
     }
     public override void Exit()
     {
-       
+
     }
 
 }

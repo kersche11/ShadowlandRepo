@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TreasureController : MonoBehaviour
@@ -22,11 +20,11 @@ public class TreasureController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-      if (other.CompareTag("Player")&&!hasCollided)
+        if (other.CompareTag("Player") && !hasCollided)
         {
             animator.CrossFadeInFixedTime(TreasureHash, CrossFixedTimeDuration);
-            hasCollided=true;
+            hasCollided = true;
             SceneLoaderOpenWorld.SetActive(true);
-        }    
+        }
     }
 }

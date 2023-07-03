@@ -1,6 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,16 +7,16 @@ using UnityEngine.InputSystem;
 //In dieser Klasse werden alle Actions des Players implementiert.
 public class InputReader : MonoBehaviour, Controls.IPlayingActions, Controls.IMenuActions
 {
-    public bool IsAttacking {  get; private set; }
+    public bool IsAttacking { get; private set; }
     public bool IsBlocking { get; private set; }
     public bool IsCarrying { get; private set; }
-    public Vector2 MovementValue {  get; private set; }
+    public Vector2 MovementValue { get; private set; }
     //Events
     public event Action JumpEvent;
     public event Action DodgeEvent;
     public event Action TargetEvent;
     public event Action PickUpEvent;
-    
+
 
     private Controls controls;
     private void Start()
@@ -34,13 +32,13 @@ public class InputReader : MonoBehaviour, Controls.IPlayingActions, Controls.IMe
     private void OnDestroy()
     {
         //Deaktiviere die Controlls für Playing
-        controls.Playing.Disable();
+        controls?.Playing.Disable();
     }
     //Springen mit Space oder Gamepad South
     public void OnJump(InputAction.CallbackContext context)
     {
         //performed heißt die Taste ist gedrückt
-        if(!context.performed) { return; }
+        if (!context.performed) { return; }
 
         JumpEvent?.Invoke();
     }
@@ -57,27 +55,27 @@ public class InputReader : MonoBehaviour, Controls.IPlayingActions, Controls.IMe
     public void OnMove(InputAction.CallbackContext context)
     {
         //Hier lesen wrir einen Vector2 value ein.
-        MovementValue=context.ReadValue<Vector2>();
+        MovementValue = context.ReadValue<Vector2>();
     }
 
     //Für die Drehung der Kamera mit Maus oder Joystick
     public void OnLook(InputAction.CallbackContext context)
     {
-        
+
     }
 
     public void OnTarget(InputAction.CallbackContext context)
     {
-        if (!context.performed) { return ; }
-        TargetEvent?.Invoke();  
+        if (!context.performed) { return; }
+        TargetEvent?.Invoke();
     }
 
-   
+
 
     public void OnAttack(InputAction.CallbackContext context)
     {
-        if (context.performed) 
-        { 
+        if (context.performed)
+        {
             IsAttacking = true;
         }
         else if (context.canceled)
@@ -102,7 +100,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayingActions, Controls.IMe
     public void OnPickUp(InputAction.CallbackContext context)
     {
         //performed = Taste ist gedrückt
-        if (!context.performed) { return; }   
+        if (!context.performed) { return; }
         PickUpEvent?.Invoke();
     }
 
@@ -116,7 +114,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayingActions, Controls.IMe
 
     public void OnClick(InputAction.CallbackContext context)
     {
-       
-        
+
+
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -17,12 +15,12 @@ public class PlayerImpactState : PlayerBaseState
     public override void Enter()
     {
         //Wenn der Player von eineme Enemy getroffen wird muss er den Stein fallen lassen
-        if (SceneManager.GetActiveScene().buildIndex==2)
+        if (SceneManager.GetActiveScene().buildIndex == 2)
         {
             stateMachine.StoneCarryHandler?.SetStone();
             stateMachine.InputReader?.SetCarrying();
         }
-       
+
         if (stateMachine.InputReader.IsBlocking)
         {
             stateMachine.Animator.CrossFadeInFixedTime(BlockImpactHash, CrossFadeDuration);
@@ -31,7 +29,7 @@ public class PlayerImpactState : PlayerBaseState
         {
             stateMachine.Animator.CrossFadeInFixedTime(ImpactHash, CrossFadeDuration);
         }
-        
+
     }
 
     public override void Tick(float deltaTime)
@@ -50,8 +48,8 @@ public class PlayerImpactState : PlayerBaseState
     }
     public override void Exit()
     {
-        
+
     }
 
-   
+
 }

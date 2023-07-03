@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class PlayerFreeLookState : PlayerBaseState
@@ -10,8 +7,8 @@ public class PlayerFreeLookState : PlayerBaseState
     //Better Version (Holt sich den Wert als Integer vom Animator):
     private readonly int FreeLookSpeedHash = Animator.StringToHash("FreeLookSpeed");
     private readonly int FreeLookTreeBlendHash = Animator.StringToHash("FreeLookBlendTree");
-    
-    
+
+
 
     private const float AnimatorDampTime = 0.1f;
     private const float CrossFadeDuration = 0.1f;
@@ -32,21 +29,21 @@ public class PlayerFreeLookState : PlayerBaseState
         stateMachine.InputReader.JumpEvent += OnJump;
 
         //Subscribe das PickUp Event. Wenn die Taste Space gedrückt wird switchen wir in den PlayerJumpState
-        stateMachine.InputReader.PickUpEvent +=OnPickUp;
+        stateMachine.InputReader.PickUpEvent += OnPickUp;
 
 
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0);
 
         //Starte FreeLook Animation, abhängig von shouldFade
-        if (shouldFade) 
-        {                                          
-                stateMachine.Animator.CrossFadeInFixedTime(FreeLookTreeBlendHash, CrossFadeDuration);                     
+        if (shouldFade)
+        {
+            stateMachine.Animator.CrossFadeInFixedTime(FreeLookTreeBlendHash, CrossFadeDuration);
         }
         else
         {
             stateMachine.Animator.Play(FreeLookTreeBlendHash);
         }
-        
+
     }
     public override void Tick(float deltaTime)
     {
@@ -56,7 +53,7 @@ public class PlayerFreeLookState : PlayerBaseState
         //Array[0]
         if (stateMachine.InputReader.IsAttacking)
         {
-            stateMachine.SwitchState(new PlayerAttackingState(stateMachine,0));
+            stateMachine.SwitchState(new PlayerAttackingState(stateMachine, 0));
             return;
         }
         if (stateMachine.InputReader.IsBlocking)
@@ -70,7 +67,7 @@ public class PlayerFreeLookState : PlayerBaseState
         //Move wird von der PlayerBaseState.cs aufgerufen
         //Movementspeed kann im Player-Inspector verändert werden
         Move(movement * stateMachine.FreeLookMovementSpeed, deltaTime);
-        
+
 
         //Wenn der Wert 0 ist soll keine Berechnung durchgeführt werden
         //Der BlendTree FreeLookSpeed (Animator) wird smooth auf 0 gesetzt
@@ -84,19 +81,19 @@ public class PlayerFreeLookState : PlayerBaseState
         //Der BlendTree FreeLookSpeed (Animator) wird smooth auf 1 gesetzt
         stateMachine.Animator.SetFloat(FreeLookSpeedHash, 1, AnimatorDampTime, deltaTime);
 
-        FaceMovementDirection(movement,deltaTime);
+        FaceMovementDirection(movement, deltaTime);
 
-        
+
     }
 
-   
+
 
     public override void Exit()
     {
         stateMachine.InputReader.TargetEvent -= OnTarget;
         stateMachine.InputReader.JumpEvent -= OnJump;
         stateMachine.InputReader.PickUpEvent -= OnPickUp;
-      
+
     }
 
 
@@ -116,19 +113,19 @@ public class PlayerFreeLookState : PlayerBaseState
         right.Normalize();
 
         return forward * stateMachine.InputReader.MovementValue.y
-                + right*stateMachine.InputReader.MovementValue.x;
+                + right * stateMachine.InputReader.MovementValue.x;
     }
 
-    
+
     //Der Player dreht sich in die Richtung in die man gerade steuert
     //LERP Linere Inerpolation, um die Drehung smoother zu machen
     private void FaceMovementDirection(Vector3 movement, float deltaTime)
     {
-            stateMachine.transform.rotation = Quaternion.Lerp(
-            stateMachine.transform.rotation,
-            Quaternion.LookRotation(movement),deltaTime*stateMachine.RotationSmoothValue);
+        stateMachine.transform.rotation = Quaternion.Lerp(
+        stateMachine.transform.rotation,
+        Quaternion.LookRotation(movement), deltaTime * stateMachine.RotationSmoothValue);
 
-       // Debug.Log(stateMachine.InputReader.MovementValue);
+        // Debug.Log(stateMachine.InputReader.MovementValue);
     }
 
 
@@ -149,12 +146,12 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void OnPickUp()
     {
-        if(!stateMachine.ItemTargeter.SelectStone()) 
+        if (!stateMachine.ItemTargeter.SelectStone())
         {
             return;
         }
         stateMachine.SwitchState(new PlayerPickUpState(stateMachine));
-        
+
         //
         //if (stateMachine.ItemTargeter.SelectItem())
         //{

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WaypointPath : MonoBehaviour
@@ -13,12 +11,12 @@ public class WaypointPath : MonoBehaviour
 
     public int GetNextWaypointIndex(int currentWaypointIndex)
     {
-        
+
         if (nextWaypointIndex < transform.childCount)
         {
             nextWaypointIndex = currentWaypointIndex + 1;
         }
-        
+
         return nextWaypointIndex;
 
     }
