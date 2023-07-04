@@ -55,8 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fedb92fca0f0b134ab1d87f86055e43b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCollider: {fileID: 0}
-  <selectedScene>k__BackingField: 0
+  <selectedScene>k__BackingField: 1
 --- !u!23 &2894297104944520577
 MeshRenderer:
   m_ObjectHideFlags: 0

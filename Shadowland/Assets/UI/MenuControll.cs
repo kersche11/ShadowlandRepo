@@ -34,11 +34,10 @@ public class MenuControll : MonoBehaviour
         }
         else
         {
-            isMenuOpen = true;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
-            //SetFalse();
+            isMenuOpen =false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+     
             Time.timeScale = 1f;
             ActivateButton();
         }
@@ -49,7 +48,12 @@ public class MenuControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+       
         if (Input.GetKeyDown(KeyCode.Escape))
         {
 
@@ -59,7 +63,7 @@ public class MenuControll : MonoBehaviour
                 Cursor.visible = true;
                 OnOpen();
             }
-            else if (isMenuOpen == true && SceneManager.GetActiveScene().buildIndex != 0)
+            else if (isMenuOpen == true)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;

@@ -15,7 +15,8 @@ public class SceneLoaderManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         diamondCount = PlayerPrefs.GetInt(LevelManager.Instance.scorekey);
         if (diamondCount == 0 )
         {
