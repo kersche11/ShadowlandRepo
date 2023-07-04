@@ -62,12 +62,14 @@ public class MenuControll : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 OnOpen();
+                ActivateButton();
             }
             else if (isMenuOpen == true)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
                 OnClosed();
+                
             }
         }
     }
@@ -86,7 +88,11 @@ public class MenuControll : MonoBehaviour
     private void OnOpen()
     {
         menu.SetActive(true);
-        triggerTutorial.DisableTutorialImages();
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            triggerTutorial.DisableTutorialImages();
+        }
+        
         //einfrieren
         Time.timeScale = 0f;
         isMenuOpen = true;

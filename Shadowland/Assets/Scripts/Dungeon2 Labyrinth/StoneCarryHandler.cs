@@ -4,18 +4,18 @@ public class StoneCarryHandler : MonoBehaviour
 {
     [field: SerializeField] public StoneCarryPosition StonePosition { get; private set; }
 
-
-    private Stone stone;
+    [SerializeField]
+    private Stone? stone;
 
 
     public StoneCarryHandler()
     {
-        stone = null;
+       
     }
 
     void Start()
     {
-        stone = null;
+       
     }
 
 
@@ -30,10 +30,14 @@ public class StoneCarryHandler : MonoBehaviour
     }
     public void SetStone()
     {
-        stone.GetComponent<Rigidbody>().isKinematic = false;
-        stone.GetComponent<Rigidbody>().detectCollisions = true;
-        this.stone.transform.SetParent(null);
-        stone = null;
+        if (this.stone != null)
+        {
+            stone.GetComponent<Rigidbody>().isKinematic = false;
+            stone.GetComponent<Rigidbody>().detectCollisions = true;
+            this.stone.transform.SetParent(null);
+            stone = null;
+        }
+       
 
     }
 

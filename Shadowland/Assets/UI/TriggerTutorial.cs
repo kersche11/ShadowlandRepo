@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Video;
 
 public class TriggerTutorial : MonoBehaviour
@@ -21,11 +22,7 @@ public class TriggerTutorial : MonoBehaviour
         DisableTutorialImages();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
 
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -74,10 +71,14 @@ public class TriggerTutorial : MonoBehaviour
 
     public void DisableTutorialImages()
     {
-        attackImage.SetActive(false);
-        jumpImage.SetActive(false);
-        dodgeImage.SetActive(false);
-        stoneImage.SetActive(false);
-        bossImage.SetActive(false);
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            attackImage.SetActive(false);
+            jumpImage.SetActive(false);
+            dodgeImage.SetActive(false);
+            stoneImage.SetActive(false);
+            bossImage.SetActive(false);
+        }
+        
     }
 }
