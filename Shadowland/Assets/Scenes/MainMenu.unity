@@ -7456,6 +7456,67 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4773188267228538834, guid: 51cdc06b401793648bbc5e4560e4b02e, type: 3}
+--- !u!1001 &754685455
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -395.20416
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 385.0531
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fb5b9d60d255dd54c8b684fa5a45de09, type: 2}
+    - target: {fileID: 919132149155446097, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
+      propertyPath: m_Name
+      value: New Water
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6ec79adc418a2934baa1dac902361a3e, type: 3}
 --- !u!1 &755318997 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8618729115410457902, guid: e6d1fd00eda617f4ba3d6027f8e9bf50, type: 3}
@@ -14249,6 +14310,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 6143019620314169055, guid: 51cdc06b401793648bbc5e4560e4b02e, type: 3}
+--- !u!82 &1376829124 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8407439220867592987, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
+  m_PrefabInstance: {fileID: 8342773444859362765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1380387060 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1686077389019576974, guid: e6d1fd00eda617f4ba3d6027f8e9bf50, type: 3}
@@ -59499,6 +59565,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8342773445492137408, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
+      propertyPath: <PlayerAudio>k__BackingField
+      value: 
+      objectReference: {fileID: 1376829124}
     - target: {fileID: 8342773445492137411, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.47
