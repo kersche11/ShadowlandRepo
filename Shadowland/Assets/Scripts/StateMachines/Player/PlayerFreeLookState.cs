@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class PlayerFreeLookState : PlayerBaseState
@@ -73,9 +74,13 @@ public class PlayerFreeLookState : PlayerBaseState
         //Der BlendTree FreeLookSpeed (Animator) wird smooth auf 0 gesetzt
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
         {
-
+            stateMachine.PlayerAudio.enabled = false;
             stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
             return;
+        }
+        else
+        {
+            stateMachine.PlayerAudio.enabled = true;
         }
 
         //Der BlendTree FreeLookSpeed (Animator) wird smooth auf 1 gesetzt
@@ -141,11 +146,13 @@ public class PlayerFreeLookState : PlayerBaseState
 
     private void OnJump()
     {
+        stateMachine.PlayerAudio.enabled = false;
         stateMachine.SwitchState(new PlayerJumpingState(stateMachine));
     }
 
     private void OnPickUp()
     {
+        stateMachine.PlayerAudio.enabled = false;
         if (!stateMachine.ItemTargeter.SelectStone())
         {
             return;

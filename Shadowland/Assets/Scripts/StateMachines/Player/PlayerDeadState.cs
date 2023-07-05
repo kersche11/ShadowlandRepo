@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine.SceneManagement;
 
 public class PlayerDeadState : PlayerBaseState
@@ -11,6 +12,7 @@ public class PlayerDeadState : PlayerBaseState
     public override void Enter()
     {
         //Ragdoll
+        SoundManager.Instance.PlaySound(SoundManager.Sound.Player_Death);
         stateMachine.Ragdoll.ToggleRagdoll(true);
         if (SceneManager.GetActiveScene().buildIndex == 3)
         {

@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -19,8 +20,9 @@ public class PlayerImpactState : PlayerBaseState
         {
             stateMachine.StoneCarryHandler?.SetStone();
             stateMachine.InputReader?.SetCarrying();
-        }
 
+        }
+        SoundManager.Instance.PlaySound(SoundManager.Sound.Player_GetDamage);
         if (stateMachine.InputReader.IsBlocking)
         {
             stateMachine.Animator.CrossFadeInFixedTime(BlockImpactHash, CrossFadeDuration);

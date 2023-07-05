@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class PlayerFallingState : PlayerBaseState
@@ -40,6 +41,7 @@ public class PlayerFallingState : PlayerBaseState
 
     public override void Exit()
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.Player_Landing_Jump);
         stateMachine.LedgeDetector.OnLedgeDetect -= HandleLedgeDetection;
     }
 

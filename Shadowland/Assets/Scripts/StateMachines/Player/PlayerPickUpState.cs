@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class PlayerPickUpState : PlayerBaseState
@@ -24,7 +25,7 @@ public class PlayerPickUpState : PlayerBaseState
         CurrentStone = stateMachine.ItemTargeter.GetCurrentStone();
         stateMachine.StoneCarryHandler.SetCurrentStone(CurrentStone);
 
-
+        SoundManager.Instance.PlaySound(SoundManager.Sound.Player_PickUpStone);
         if (stateMachine.InputReader.IsCarrying)
         {
             stateMachine.Animator.CrossFadeInFixedTime(LiftingObjectDownHash, CrossFadeDuration);

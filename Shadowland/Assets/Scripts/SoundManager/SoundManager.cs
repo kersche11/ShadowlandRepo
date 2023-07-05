@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using static CUAS.MMT.SoundManager;
 
 
 namespace CUAS.MMT
@@ -10,22 +11,29 @@ namespace CUAS.MMT
 
         //https://docs.unity3d.com/2019.3/Documentation/Manual/class-AudioSource.html
 
-        AudioClip collect; //ok
-        AudioClip win;
-        AudioClip jump;
-        AudioClip hitEnemy;
-        AudioClip hitPlayer;
-        AudioClip alert;
-        AudioClip miss;
-        AudioClip bump;
-        AudioClip doorbutton;
+        //AudioClip PlayerHieb;
+        //AudioClip collect; //ok
+        //AudioClip win;
+        //AudioClip jump;
+        //AudioClip hitEnemy;
+        //AudioClip hitPlayer;
+        //AudioClip alert;
+        //AudioClip miss;
+        //AudioClip bump;
+        //AudioClip doorbutton;
 
 
         GameObject soundGameObject = null;
         AudioSource audioSource = null;
+
+       // GameObject soundGameObject2 = null;
+       // AudioSource audioSource2 = null;
         public AudioSource GetAudioSource()
         {
+        
+           
             return audioSource;
+
         }
 
 
@@ -37,6 +45,25 @@ namespace CUAS.MMT
 
         public enum Sound
         {
+
+            //Player
+            Player_Breath_Run,
+            Player_Landing_Jump,
+            Player_Dodge,
+            Player_HeartBeat,
+            Player_Run_Sand,
+            Player_Run_Snow,
+            Player_Run_Stone,
+            Player_Run_Meadow,
+            Player_Run_Wood,
+            Player_GetDamage,
+            Player_SwordSlash,
+            Player_SwordSlash2,
+            Player_CarryStone,
+            Player_PickUpStone,         
+            Player_Death,
+           
+          
 
             //Skeleton
             SkeletonRun,
@@ -56,14 +83,6 @@ namespace CUAS.MMT
             MetalonImpact,
             MetalonDeath,
 
-            //Player
-            PlayerRun,
-            PlayerAttack,
-            PlayerImpact,
-            PlayerDeath,
-            PlayerDodge,
-            PlayerPickUp,
-            PlayerJump,
 
             //Dragon
             DragonWalk,
@@ -106,19 +125,7 @@ namespace CUAS.MMT
         }
 
 
-        public enum Skeleton
-        {
-            Collect,
-            Win,
-            Jump,
-            HitEnemy,
-            HitPlayer,
-            Alert,
-            Miss,
-            Bump,
-            Doorbutton
-        }
-
+      
 
 
         public void Init()
@@ -130,17 +137,27 @@ namespace CUAS.MMT
                 soundGameObject = new GameObject("Sound");
                 audioSource = soundGameObject.AddComponent<AudioSource>();
 
-                //add Sounds to List
-                soundList.Add(Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-33"));
-                soundList.Add(Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-18"));
-                soundList.Add(Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-41"));
-                soundList.Add(Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-21"));
-                soundList.Add(Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-10"));
-                soundList.Add(Resources.Load<AudioClip>("ENGALRT"));
-                soundList.Add(Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-25"));
-                soundList.Add(Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-03"));
-                soundList.Add(Resources.Load<AudioClip>("zelda"));
+               // soundGameObject2 = new GameObject("Sound2");
+               // audioSource2 = soundGameObject2.AddComponent<AudioSource>();
+               // audioSource2.loop = true;
+                //add PlayerSounds
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_,Atmen_Run"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Aufkommen_Sprung"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Ausweichen"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Herzschlag"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Run_Sand"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Run_Schnee"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Run_tein"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Run_Wiese"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Run_Wood"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Schaden_bekommen"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Schwert_hieb"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Schwert_hieb_2"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Stein_gehen"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Stein_heben"));
+                soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Tod"));
 
+               
 
                 //collect = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-33");
                 //win = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-18");
@@ -155,10 +172,33 @@ namespace CUAS.MMT
 
         }
 
-        public void PlaySound(Sound sound, bool check = false)
+
+        public AudioClip GetClip(Sound sound)
+        {
+            AudioClip clip = soundList[(int)sound];
+            return clip;
+        }
+        public void StopSound()
+        {
+          
+            audioSource.Stop();
+        }
+
+        public void StopLoop()
+        {
+
+            //audioSource.Stop();
+        }
+
+      
+
+
+
+            public void PlaySound(Sound sound, bool check = false)
         {
             if (check)
             {
+               
                 if (!audioSource.isPlaying)
                 {
                     audioSource.PlayOneShot(soundList[(int)sound]);
@@ -166,48 +206,11 @@ namespace CUAS.MMT
             }
             else
             {
+                
                 audioSource.PlayOneShot(soundList[(int)sound]);
             }
 
-            //Play sounds
-
-
-            //if (sound == Sound.Collect)
-            //{
-            //    audioSource.PlayOneShot(collect);
-            //}
-            //else if (sound == Sound.Win)
-            //{
-            //    audioSource.PlayOneShot(win);
-            //}
-            //else if (sound == Sound.Jump)
-            //{
-            //    audioSource.PlayOneShot(jump);
-            //}
-            //else if (sound == Sound.HitEnemy)
-            //{
-            //    audioSource.PlayOneShot(hitEnemy);
-            //}
-            //else if (sound == Sound.HitPlayer)
-            //{
-            //    audioSource.PlayOneShot(hitPlayer);
-            //}
-            //else if (sound == Sound.Alert)
-            //{
-            //    audioSource.PlayOneShot(alert);
-            //}
-            //else if (sound == Sound.Miss)
-            //{
-            //    audioSource.PlayOneShot(miss);
-            //}
-            //else if (sound == Sound.Bump)
-            //{
-            //    audioSource.PlayOneShot(bump);
-            //}
-            //else
-            //{
-            //    Debug.Log("SoundManager: unknown sound");
-            //}
+        
 
         }
 

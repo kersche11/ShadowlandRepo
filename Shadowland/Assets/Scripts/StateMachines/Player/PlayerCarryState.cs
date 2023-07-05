@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class PlayerCarryState : PlayerBaseState
@@ -18,6 +19,8 @@ public class PlayerCarryState : PlayerBaseState
         stateMachine.Animator.CrossFadeInFixedTime(CarryingBlendHash, CrossFadeDuration);
         FLmoveSpeed = stateMachine.FreeLookMovementSpeed;
         stateMachine.SetMovementSpeed(4);
+        stateMachine.PlayerAudio.clip = SoundManager.Instance.GetClip(SoundManager.Sound.Player_CarryStone);
+        
     }
 
     public override void Tick(float deltaTime)
@@ -33,9 +36,13 @@ public class PlayerCarryState : PlayerBaseState
         //Der BlendTree FreeLookSpeed (Animator) wird smooth auf 0 gesetzt
         if (stateMachine.InputReader.MovementValue == Vector2.zero)
         {
-
+            stateMachine.PlayerAudio.enabled = false;
             stateMachine.Animator.SetFloat(FreeLookSpeedHash, 0, AnimatorDampTime, deltaTime);
             return;
+        }
+        else
+        {
+            stateMachine.PlayerAudio.enabled = true;
         }
 
         //Der BlendTree FreeLookSpeed (Animator) wird smooth auf 1 gesetzt
@@ -48,6 +55,7 @@ public class PlayerCarryState : PlayerBaseState
     {
         stateMachine.SetMovementSpeed(FLmoveSpeed);
         stateMachine.InputReader.PickUpEvent -= OnPickUp;
+        stateMachine.PlayerAudio.clip = SoundManager.Instance.GetClip(SoundManager.Sound.Player_Run_Meadow);
     }
 
     //Speichert die Vectoren in seperate Variablen

@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 //The PlayerStateMachine erbt das MonoBehaviour über die StateMachine Klasse.
@@ -39,6 +40,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField] public float RotationSmoothValue { get; private set; }
     [field: SerializeField] public float JumpForce { get; private set; }
     [field: SerializeField] public float JumpRange { get; private set; }
+    [field: SerializeField] public AudioSource PlayerAudio { get; private set; }
 
 
 
@@ -49,6 +51,7 @@ public class PlayerStateMachine : StateMachine
 
     private void Start()
     {
+        SoundManager.Instance.Init();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         TargetingSphere.radius = TargetingRadius;

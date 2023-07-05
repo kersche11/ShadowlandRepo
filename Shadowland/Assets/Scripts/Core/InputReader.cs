@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -56,6 +57,7 @@ public class InputReader : MonoBehaviour, Controls.IPlayingActions, Controls.IMe
     {
         //Hier lesen wrir einen Vector2 value ein.
         MovementValue = context.ReadValue<Vector2>();
+       
     }
 
     //Für die Drehung der Kamera mit Maus oder Joystick

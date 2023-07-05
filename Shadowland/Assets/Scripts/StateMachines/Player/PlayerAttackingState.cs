@@ -1,3 +1,5 @@
+using CUAS.MMT;
+
 public class PlayerAttackingState : PlayerBaseState
 {
     private float previousFrameTime;
@@ -14,6 +16,7 @@ public class PlayerAttackingState : PlayerBaseState
         //Crossfade ist für die Transition von einer Animation zur nächsten
         //https://docs.unity3d.com/ScriptReference/Animator.CrossFadeInFixedTime.html
         stateMachine.Animator.CrossFadeInFixedTime(attack.AnimationName, attack.TransitionDuration);
+        SoundManager.Instance.PlaySound(SoundManager.Sound.Player_SwordSlash);
     }
 
     public override void Tick(float deltaTime)

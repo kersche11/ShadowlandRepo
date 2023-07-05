@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class PlayerDodgingState : PlayerBaseState
@@ -26,7 +27,7 @@ public class PlayerDodgingState : PlayerBaseState
         stateMachine.Animator.CrossFadeInFixedTime(DodgeBlendTreeHash, CrossFadeDuration);
 
         stateMachine.Health.SetInvulnerable(true);
-
+        SoundManager.Instance.PlaySound(SoundManager.Sound.Player_Dodge);
     }
 
     public override void Tick(float deltaTime)
