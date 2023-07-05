@@ -63,8 +63,9 @@ namespace CUAS.MMT
             Player_PickUpStone,         
             Player_Death,
            
-          
-          
+            //Dungeon1
+            Dungeon_One_FAIL,
+            
 
             //Skeleton
             SkeletonRun,
@@ -158,7 +159,8 @@ namespace CUAS.MMT
                 soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Stein_heben"));
                 soundList.Add(Resources.Load<AudioClip>("Sounds/PlayerSounds/_Player_Tod"));
 
-               
+                //Dungeon 1
+                soundList.Add(Resources.Load<AudioClip>("Sounds/EnvironmentSounds/Dun1_Lose_Sound"));
 
                 //collect = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-33");
                 //win = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-18");

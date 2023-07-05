@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class TreeManager : MonoBehaviour
@@ -79,6 +80,7 @@ public class TreeManager : MonoBehaviour
             }
             else
             {
+                SoundManager.Instance.PlaySound(SoundManager.Sound.Dungeon_One_FAIL);
                 SpawnEnemies(numberOfFails);
                 numberOfCorrectTrees = 0;
 

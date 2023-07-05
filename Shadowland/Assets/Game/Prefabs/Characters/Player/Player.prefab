@@ -195,7 +195,7 @@ MonoBehaviour:
   <RotationSmoothValue>k__BackingField: 10
   <JumpForce>k__BackingField: 5
   <JumpRange>k__BackingField: 4
-  <PlayerAudio>k__BackingField: {fileID: 0}
+  <PlayerAudio>k__BackingField: {fileID: 1954514024742038384}
 --- !u!114 &2050705132792153514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,7 +337,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a689f756d69ce9b4694a2cda8602531f, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
