@@ -56729,7 +56729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8342773445746515748, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_TrackedObjectOffset.y
-      value: -1.5
+      value: -3.56
       objectReference: {fileID: 0}
     - target: {fileID: 8342773445746515755, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -56905,15 +56905,15 @@ PrefabInstance:
       objectReference: {fileID: 1602894256}
     - target: {fileID: 8342773446354830474, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.000004351139
+      value: 0.0000062584877
       objectReference: {fileID: 0}
     - target: {fileID: 8342773446354830474, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4999986
+      value: 3.5599983
       objectReference: {fileID: 0}
     - target: {fileID: 8342773446354830474, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.886868
+      value: 9.344868
       objectReference: {fileID: 0}
     - target: {fileID: 8342773446354830475, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -57097,19 +57097,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8342773446837421202, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.6831529
+      value: -0.6737793
       objectReference: {fileID: 0}
     - target: {fileID: 8342773446837421202, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.05152787
+      value: -0.12399425
       objectReference: {fileID: 0}
     - target: {fileID: 8342773446837421202, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.72639185
+      value: -0.7164248
       objectReference: {fileID: 0}
     - target: {fileID: 8342773446837421202, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.05478924
+      value: 0.13184221
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342773446837421202, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 20.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8342773446837421202, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 93.514
       objectReference: {fileID: 0}
     - target: {fileID: 8342773446837421203, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_StaticEditorFlags
