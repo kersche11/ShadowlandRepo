@@ -38,4 +38,8 @@ public class LevelManager : Singleton<LevelManager>
         diamondCount = PlayerPrefs.GetInt(scorekey);
         return diamondCount;
     }
+    public void ResetDiamondCount()
+    {
+        diamondCount= 0;
+    }
 }

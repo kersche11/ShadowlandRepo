@@ -17,6 +17,8 @@ public class MenuControll : MonoBehaviour
     [SerializeField] GameObject controls;
     [SerializeField] TriggerTutorial triggerTutorial;
     [SerializeField] GameObject menu;
+    [SerializeField] ShipController? controller;
+    [SerializeField] MusicManagerOpenWorld? musicsource;
     private bool isMenuOpen;
 
 
@@ -34,6 +36,10 @@ public class MenuControll : MonoBehaviour
         }
         else
         {
+            if (controller != null)
+            {
+                controller.gameIsOn = false;
+            }
             isMenuOpen =false;
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -152,10 +158,16 @@ public class MenuControll : MonoBehaviour
 
         buttonStartGame?.onClick.AddListener(() =>
         {
+            if (controller!=null)
+            {
+                controller.gameIsOn = true;
+            }
+           
             SetFalse();
             menu.SetActive(false);
-            LevelManager.Instance.ChangeLevel(1);
-            SceneManager.LoadScene("OpenWorld");
+            musicsource.StartGameMusic();
+            //LevelManager.Instance.ChangeLevel(1);
+            //SceneManager.LoadScene("OpenWorld");
             PlayerPrefs.SetInt(LevelManager.Instance.scorekey, 0);
 
         });

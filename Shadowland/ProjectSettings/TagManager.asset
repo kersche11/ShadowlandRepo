@@ -12,6 +12,7 @@ TagManager:
   - DodgeColliderT
   - JumpColliderT
   - BossColliderT
+  - Ship
   layers:
   - Default
   - TransparentFX

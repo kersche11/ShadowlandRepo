@@ -12,7 +12,7 @@ public class WaypointPath : MonoBehaviour
     public int GetNextWaypointIndex(int currentWaypointIndex)
     {
 
-        if (nextWaypointIndex < transform.childCount)
+        if (nextWaypointIndex < transform.childCount-1)
         {
             nextWaypointIndex = currentWaypointIndex + 1;
         }

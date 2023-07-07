@@ -18,25 +18,33 @@ public class PositionHandler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         levelInfo = LevelManager.Instance.GetLevel();
         if (levelInfo.Length > 0 )
         {
-            if (levelInfo[0] == 1 && levelInfo[1] == 2 )
-            {
-                PlayerRig.transform.position = PosDungeonOne.PlayerPos;
-                PlayerRig.transform.rotation = PosDungeonOne.PlayerRot;
-            }
-            if (levelInfo[0] == 1 && levelInfo[1] == 3)
-            {
-                PlayerRig.transform.position = PosDungeonTwo.PlayerPos;
-                PlayerRig.transform.rotation = PosDungeonTwo.PlayerRot;
-            }
-            if (levelInfo[0] == 1 && levelInfo[1] == 5)
-            {
-                PlayerRig.transform.position = PosDungeonThree.PlayerPos;
-                PlayerRig.transform.rotation = PosDungeonThree.PlayerRot;
-            }
+            StartCoroutine(Delay());
+           
         }
     }
 
+    private IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(1f);
+
+        if (levelInfo[0] == 1 && levelInfo[1] == 2)
+        {
+            PlayerRig.transform.position = PosDungeonOne.PlayerPos;
+            PlayerRig.transform.rotation = PosDungeonOne.PlayerRot;
+        }
+        if (levelInfo[0] == 1 && levelInfo[1] == 3)
+        {
+            PlayerRig.transform.position = PosDungeonTwo.PlayerPos;
+            PlayerRig.transform.rotation = PosDungeonTwo.PlayerRot;
+        }
+        if (levelInfo[0] == 1 && levelInfo[1] == 5)
+        {
+            PlayerRig.transform.position = PosDungeonThree.PlayerPos;
+            PlayerRig.transform.rotation = PosDungeonThree.PlayerRot;
+        }
+    }
 }

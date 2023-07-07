@@ -33,7 +33,6 @@ public class MusicManagerOpenWorld : MonoBehaviour
             time = audioSources[1].clip.length - audioSources[1].time / audioSources[1].pitch;
         }
        
-        Debug.Log(time);
        
         if (time < changeClipTime)
         {
@@ -63,6 +62,14 @@ public class MusicManagerOpenWorld : MonoBehaviour
     {
 
         audioSources[1].Play();
+    }
+
+
+    public void StartGameMusic()
+    {
+        audioSources[0].Stop();
+        audioSources[1].Stop();
+        audioSources[2].Play();
     }
 }
 
