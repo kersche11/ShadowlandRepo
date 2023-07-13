@@ -26,6 +26,7 @@ public class BossPatrollState : BossBaseState
 
     public override void Enter()
     {
+        Debug.Log("Enter PatrolState");
         _targetCount = 0;
         stateMachine.Animator.CrossFadeInFixedTime(flyHash, CrossFadeDuration);
         stateMachine.startFightTrigger.FightEvent += OnFight;

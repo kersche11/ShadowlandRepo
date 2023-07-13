@@ -22,6 +22,7 @@ public class BossLandingState : BossBaseState
 
     public override void Enter()
     {
+        Debug.Log("Enter Landing State");
         stateMachine.Animator.CrossFadeInFixedTime(flyHash, CrossFadeDuration);
         TargetNextWaypoint();
 
@@ -31,6 +32,8 @@ public class BossLandingState : BossBaseState
 
     public override void Tick(float deltaTime)
     {
+       
+
         if (Vector3.Distance(stateMachine.WaypointCenter.transform.position, _previousWaypoint.position) < 0.01f)
         {
             TargetNextWaypoint();
@@ -52,10 +55,18 @@ public class BossLandingState : BossBaseState
         //stateMachine.WaypointCenter.transform.position = Vector3.MoveTowards(_previousWaypoint.position, _targetWaypoint.position, elapsedPercentage);
         stateMachine.WaypointCenter.transform.rotation = Quaternion.Lerp(_previousWaypoint.rotation, _targetWaypoint.rotation, elapsedPercentage);
 
+        //abfrage ob er schon den letzten waypoint erreicht hat
+        if (_targetWaypointIndex == stateMachine.GetTotalWaypoints() - 1 && Vector3.Distance(stateMachine.WaypointCenter.transform.position, _targetWaypoint.position) < 0.01f)
+        {
+            stateMachine.SwitchState(new BossIdleState(stateMachine));
+        }
+
+
     }
     public override void Exit()
     {
-
+       
+        //stateMachine.WaypointPathLanding.enabled = false;
     }
 
     private void TargetNextWaypoint()
@@ -70,4 +81,8 @@ public class BossLandingState : BossBaseState
         _timeToWaypoint = distanceToWaypoint / stateMachine.MovementSpeed;
 
     }
+
+    
+
+   
 }

@@ -4,7 +4,7 @@ public class BossIdleState : BossBaseState
 {
     private readonly int LocomotionBlendTreeHash = Animator.StringToHash("Locomotion");
 
-    private readonly int speedHash = Animator.StringToHash("Speed");
+    private readonly int speedHash = Animator.StringToHash("Blend");
 
     private const float CrossFadeDuration = 0.1f;
     private const float AnimatorDampTime = 0.1f;
@@ -12,6 +12,7 @@ public class BossIdleState : BossBaseState
 
     public override void Enter()
     {
+        Debug.Log("Enter Idle State");
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
 
     }

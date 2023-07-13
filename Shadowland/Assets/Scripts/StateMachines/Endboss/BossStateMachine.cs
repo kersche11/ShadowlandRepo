@@ -61,4 +61,10 @@ public class BossStateMachine : StateMachine
     {
         SwitchState(new BossDeadState(this));
     }
+
+    public int GetTotalWaypoints()
+    {
+        // Implementieren Sie den Code, um die Gesamtanzahl der Wegpunkte zurückzugeben
+        return WaypointPathLanding.transform.childCount; // Annahme: Die Wegpunkte sind als Kinder des WaypointPath-Objekts platziert
+    }
 }
