@@ -66,7 +66,7 @@ public class BossLandingState : BossBaseState
     public override void Exit()
     {
        
-        //stateMachine.WaypointPathLanding.enabled = false;
+        stateMachine.WaypointPathLanding.enabled = false;
     }
 
     private void TargetNextWaypoint()

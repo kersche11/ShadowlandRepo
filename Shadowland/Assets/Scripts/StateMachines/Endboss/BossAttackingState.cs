@@ -3,7 +3,7 @@ using UnityEngine;
 public class BossAttackingState : BossBaseState
 {
 
-    private readonly int AttackHash = Animator.StringToHash("Attack1");
+    private readonly int AttackHash = Animator.StringToHash("Attack");
 
     private const float TransitionDuration = 0.1f;
 

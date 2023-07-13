@@ -11,7 +11,8 @@ public class BossIdleState : BossBaseState
     public BossIdleState(BossStateMachine stateMachine) : base(stateMachine) { }
 
     public override void Enter()
-    {
+    {   
+        stateMachine.navMeshAgent.enabled = false;
         Debug.Log("Enter Idle State");
         stateMachine.Animator.CrossFadeInFixedTime(LocomotionBlendTreeHash, CrossFadeDuration);
 
@@ -19,6 +20,8 @@ public class BossIdleState : BossBaseState
 
     public override void Tick(float deltaTime)
     {
+        stateMachine.navMeshAgent.enabled = true;
+
         Move(deltaTime);
 
         if (IsInChaseRange())
