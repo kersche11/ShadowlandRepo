@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class BossLandingState : BossBaseState
@@ -58,6 +59,7 @@ public class BossLandingState : BossBaseState
         //abfrage ob er schon den letzten waypoint erreicht hat
         if (_targetWaypointIndex == stateMachine.GetTotalWaypoints() - 1 && Vector3.Distance(stateMachine.WaypointCenter.transform.position, _targetWaypoint.position) < 0.01f)
         {
+            SoundManager.Instance.PlaySound(SoundManager.Sound.DragonAufkommen);
             stateMachine.SwitchState(new BossIdleState(stateMachine));
         }
 

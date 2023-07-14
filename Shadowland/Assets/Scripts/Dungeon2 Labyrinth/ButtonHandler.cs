@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 public class ButtonHandler : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class ButtonHandler : MonoBehaviour
         if (other == stone.GetComponent<Collider>())
         {
             animator.Play("BtnDown");
+            SoundManager.Instance.PlaySound(SoundManager.Sound.DungeonTwoPressurePlate);
             ElementToSetActive.SetActive(true);
         }
 
@@ -35,6 +37,7 @@ public class ButtonHandler : MonoBehaviour
         if (other == stone.GetComponent<Collider>())
         {
             animator.CrossFadeInFixedTime("BtnUp", CrossFadeDuration);
+            SoundManager.Instance.PlaySound(SoundManager.Sound.DungeonTwoPressurePlate);
             ElementToSetActive.SetActive(false);
         }
     }

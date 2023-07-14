@@ -1833,6 +1833,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  <HealthBar>k__BackingField: {fileID: 0}
 --- !u!1 &6555209363033408381
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,6 +2495,7 @@ GameObject:
   - component: {fileID: 6555209363514215745}
   - component: {fileID: 6555209363514215744}
   - component: {fileID: 4204290915223540625}
+  - component: {fileID: 2090506687542801191}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -2538,6 +2540,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!143 &6555209363514215768
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2568,7 +2571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa2b2fa1623a8844a5d89dd582c36b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
+  maxHealth: 60
+  <HealthBar>k__BackingField: {fileID: 0}
 --- !u!114 &6555209363514215774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,6 +2686,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &2090506687542801191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6555209363514215751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867e66dbd6d3f9c4e867e828d74538a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6555209363527053819
 GameObject:
   m_ObjectHideFlags: 0

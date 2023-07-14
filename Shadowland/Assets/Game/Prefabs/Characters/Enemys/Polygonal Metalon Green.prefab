@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 1153924954142244538}
   - component: {fileID: 6287809757366899238}
   - component: {fileID: 5541161442616687047}
+  - component: {fileID: 2257925075333543483}
   m_Layer: 0
   m_Name: Polygonal Metalon Green
   m_TagString: Untagged
@@ -837,6 +838,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!143 &4575969934202898072
 CharacterController:
   m_ObjectHideFlags: 0
@@ -867,7 +869,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa2b2fa1623a8844a5d89dd582c36b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 15
+  maxHealth: 30
+  <HealthBar>k__BackingField: {fileID: 0}
 --- !u!114 &557874180279991400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -996,6 +999,18 @@ MonoBehaviour:
   Health: {fileID: 9088278822408242583}
   CoolDown: 3
   coolDownTimer: 0
+--- !u!114 &2257925075333543483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2188957724111927571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 867e66dbd6d3f9c4e867e828d74538a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2188972320190939229
 GameObject:
   m_ObjectHideFlags: 0

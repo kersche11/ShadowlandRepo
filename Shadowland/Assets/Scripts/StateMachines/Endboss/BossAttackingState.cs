@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class BossAttackingState : BossBaseState
@@ -13,6 +14,7 @@ public class BossAttackingState : BossBaseState
 
     public override void Enter()
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.DragonRoar);
 
         stateMachine.Weapon.SetAttack(stateMachine.AttackDamage, stateMachine.AttackKnockback);
         stateMachine.Animator.CrossFadeInFixedTime(AttackHash, TransitionDuration);

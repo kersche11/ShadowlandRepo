@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class BossImpactState : BossBaseState
@@ -11,6 +12,7 @@ public class BossImpactState : BossBaseState
 
     public override void Enter()
     {
+        SoundManager.Instance.PlaySound(SoundManager.Sound.DragonImpact);
         stateMachine.Animator.CrossFadeInFixedTime(ImpactHash, CrossFadeDuration);
     }
 

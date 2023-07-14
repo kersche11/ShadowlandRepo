@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using System.Collections;
 using UnityEngine;
 
@@ -26,6 +27,8 @@ public class TreasureController : MonoBehaviour
     {
         if (other.CompareTag("Player") && !hasCollided)
         {
+
+            SoundManager.Instance.PlaySound(SoundManager.Sound.Kiste_erscheinen);
             animator.CrossFadeInFixedTime(TreasureHash, CrossFixedTimeDuration);
             hasCollided = true;
             StartCoroutine(Wait());
@@ -38,6 +41,8 @@ public class TreasureController : MonoBehaviour
     private IEnumerator Wait()
     {
         yield return new WaitForSeconds(2f);
+        SoundManager.Instance.PlaySound(SoundManager.Sound.Kiste_öffnen);
+
         edelstein.SetActive(false);
     }
 }

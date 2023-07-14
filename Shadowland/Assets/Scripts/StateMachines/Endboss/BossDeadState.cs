@@ -1,4 +1,5 @@
-using UnityEditorInternal;
+using CUAS.MMT;
+
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using static SceneList;
@@ -21,7 +22,10 @@ public class BossDeadState : BossBaseState
         //stateMachine.Ragdoll.ToggleRagdoll(true);
         stateMachine.Weapon.gameObject.SetActive(false);
         GameObject.Destroy(stateMachine.Target);
+        SoundManager.Instance.PlaySound(SoundManager.Sound.DragonDeath);
         stateMachine.Animator.Play(AttackHash);
+       
+
 
         elapsedTime = 0f;
 

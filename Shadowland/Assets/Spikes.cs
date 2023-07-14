@@ -1,3 +1,4 @@
+using CUAS.MMT;
 using UnityEngine;
 
 public class Spikes : MonoBehaviour
@@ -26,6 +27,7 @@ public class Spikes : MonoBehaviour
     private void OnTrap()
     {
         animator.CrossFadeInFixedTime(TrapTriggerHash, CrossFadeDuration);
+        SoundManager.Instance.PlaySound(SoundManager.Sound.DungeonTwoFalle);
     }
 }
 
