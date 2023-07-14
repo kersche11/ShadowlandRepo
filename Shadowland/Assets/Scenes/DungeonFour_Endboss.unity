@@ -206,15 +206,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5798586787777623225, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.008854866
+      value: -0.008889675
       objectReference: {fileID: 0}
     - target: {fileID: 5798586787777623225, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000008110888
+      value: -0.000008102506
       objectReference: {fileID: 0}
     - target: {fileID: 5798586787777623225, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.13434
+      value: 10.134374
       objectReference: {fileID: 0}
     - target: {fileID: 5798586788040652819, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -234,19 +234,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5798586788352554145, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.93918604
+      value: -0.94008464
       objectReference: {fileID: 0}
     - target: {fileID: 5798586788352554145, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0004663835
+      value: -0.00046895174
       objectReference: {fileID: 0}
     - target: {fileID: 5798586788352554145, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.34340858
+      value: -0.34094095
       objectReference: {fileID: 0}
     - target: {fileID: 5798586788352554145, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00017053074
+      value: 0.00017007497
       objectReference: {fileID: 0}
     - target: {fileID: 5798586788917245255, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -340,6 +340,10 @@ PrefabInstance:
       propertyPath: <PlayerAudio>k__BackingField
       value: 
       objectReference: {fileID: 226659152}
+    - target: {fileID: 8342773445492137408, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
+      propertyPath: <FreeLookMovementSpeed>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8342773445492137411, guid: 53d974242eaa6bc41b1b943c3de7991e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

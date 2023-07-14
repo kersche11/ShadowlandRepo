@@ -162,14 +162,7 @@ namespace CUAS.MMT
                 //Dungeon 1
                 soundList.Add(Resources.Load<AudioClip>("Sounds/EnvironmentSounds/Dun1_Lose_Sound"));
 
-                //collect = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-33");
-                //win = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-18");
-                //jump = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-41");
-                //hitEnemy = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-21");
-                //hitPlayer = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-10");
-                //alert = Resources.Load<AudioClip>("ENGALRT");
-                //miss = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-25");
-                //bump = Resources.Load<AudioClip>("CasualGameSounds/DM-CGS-03");
+
             }
 
 

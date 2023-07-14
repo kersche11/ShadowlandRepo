@@ -12658,6 +12658,10 @@ PrefabInstance:
       propertyPath: <HealthBar>k__BackingField
       value: 
       objectReference: {fileID: 6964436702935813746}
+    - target: {fileID: 1968608786161171388, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
+      propertyPath: <FreeLookMovementSpeed>k__BackingField
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4102265288331607651, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.06612787
@@ -12672,19 +12676,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4102265289645839069, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9292117
+      value: 0.9203009
       objectReference: {fileID: 0}
     - target: {fileID: 4102265289645839069, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00030317658
+      value: -0.00028368502
       objectReference: {fileID: 0}
     - target: {fileID: 4102265289645839069, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.36954775
+      value: 0.39121112
       objectReference: {fileID: 0}
     - target: {fileID: 4102265289645839069, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000120573415
+      value: 0.000120591794
       objectReference: {fileID: 0}
     - target: {fileID: 4102265289694837139, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
       propertyPath: m_ChildCameras.Array.size
@@ -12692,15 +12696,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4102265290120073925, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.010494232
+      value: 0.010585308
       objectReference: {fileID: 0}
     - target: {fileID: 4102265290120073925, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000008104602
+      value: -0.000008102739
       objectReference: {fileID: 0}
     - target: {fileID: 4102265290120073925, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.12139
+      value: 10.121393
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7714e05bbbfeb54b931184dc62a3ff3, type: 3}
@@ -12735,8 +12739,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7396562731914564315, guid: 68fff115d7d5a6649a46204321e72384, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7573303139474343680, guid: 68fff115d7d5a6649a46204321e72384, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7666454004190424961, guid: 68fff115d7d5a6649a46204321e72384, type: 3}
+      propertyPath: edelstein
+      value: 
+      objectReference: {fileID: 7666454003631890330}
     - target: {fileID: 7666454004190424961, guid: 68fff115d7d5a6649a46204321e72384, type: 3}
       propertyPath: SceneLoaderOpenWorld
       value: 
@@ -12787,6 +12799,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68fff115d7d5a6649a46204321e72384, type: 3}
+--- !u!1 &7666454003631890330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3653352538185467361, guid: 68fff115d7d5a6649a46204321e72384, type: 3}
+  m_PrefabInstance: {fileID: 7666454003631890329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!222 &7674466722241913359
 CanvasRenderer:
   m_ObjectHideFlags: 0

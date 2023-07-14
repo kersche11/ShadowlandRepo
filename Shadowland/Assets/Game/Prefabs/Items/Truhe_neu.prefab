@@ -577,6 +577,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &7666454004190424961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -591,6 +592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 7666454004190424974}
   SceneLoaderOpenWorld: {fileID: 0}
+  edelstein: {fileID: 3653352538185467361}
 --- !u!1 &7573303139474343680
 GameObject:
   m_ObjectHideFlags: 0
