@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DungeonFour_Endboss.unity
     guid: 88b165ec65cad244b90648b9a530a376
+  - enabled: 1
+    path: Assets/Scenes/EndSzene.unity
+    guid: c171658a78588974b873b4e5c9626b23
   m_configObjects: {}
